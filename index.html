@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Session Guide · Guía Previa</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+ --cream: #F5F0E8;
+ --sand: #EDE5D0;
+ --caramel: #C8983A;
+ --terra: #C4714A;
+ --brown: #5C4A2A;
+ --dark: #2C2416;
+ --text: #2C2416;
+ --muted: #7A6A50;
+ --soft: #FAF7F2;
+ --green-ok: #7A9E7E;
+ --red-no: #C4714A;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+/* LANGUAGE TOGGLE */
+.lang-bar {
+ background: var(--dark);
+ border-bottom: 2px solid var(--caramel);
+ display: flex; justify-content: flex-end; align-items: center;
+ padding: 8px 20px; gap: 6px;
+}
+.lang-btn {
+ border: 1px solid rgba(200,152,58,0.4); background: transparent;
+ color: rgba(245,240,232,0.65); border-radius: 20px;
+ padding: 5px 14px; font-size: 10px; letter-spacing: 1.5px;
+ text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif;
+ transition: all 0.2s;
+}
+.lang-btn.active {
+ background: var(--caramel);
+ border-color: var(--caramel); color: #F5F0E8;
+}
+
+/* HERO */
+.hero {
+ background: #2C2416;
+ padding: 56px 24px 48px; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+ content: ''; position: absolute; top: -60px; right: -60px;
+ width: 260px; height: 260px;
+ background: radial-gradient(circle, rgba(200,152,58,0.08) 0%, transparent 70%); border-radius: 50%;
+}
+.hero::after {
+ content: ''; position: absolute; bottom: -40px; left: -40px;
+ width: 180px; height: 180px;
+ background: radial-gradient(circle, rgba(200,152,58,0.06) 0%, transparent 70%); border-radius: 50%;
+}
+.hero-eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: rgba(200,152,58,0.9); margin-bottom: 12px; animation: fadeDown 0.7s ease both; }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: #F5F0E8; line-height: 1.1; margin-bottom: 10px; animation: fadeDown 0.7s ease 0.1s both; }
+.hero-title em { color: var(--caramel); font-style: italic; }
+.hero-sub { font-size: 12px; color: rgba(245,240,232,0.65); letter-spacing: 1.5px; margin-bottom: 28px; animation: fadeDown 0.7s ease 0.2s both; }
+.hero-intro { max-width: 520px; margin: 0 auto 28px; font-size: 14px; color: rgba(245,240,232,0.8); line-height: 1.8; animation: fadeUp 0.7s ease 0.3s both; }
+.hero-steps { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.4s both; }
+.hero-step-chip { background: rgba(200,152,58,0.15); border: 1px solid rgba(200,152,58,0.4); border-radius: 20px; padding: 6px 14px; font-size: 10px; letter-spacing: 1px; color: var(--caramel); text-transform: uppercase; }
+
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* TAB NAV */
+.tab-nav { position: sticky; top: 0; z-index: 100; background: var(--caramel); backdrop-filter: blur(10px); border-bottom: none; display: flex; box-shadow: 0 2px 16px rgba(44,36,22,0.18); }
+.tab-btn { flex: 1; border: none; background: transparent; cursor: pointer; padding: 16px 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.25s; border-bottom: 2px solid transparent; border-bottom-color: transparent; }
+.tab-btn.active { border-bottom: 2px solid var(--dark); background: var(--dark); }
+.tab-btn-icon { display: none; }
+.tab-btn-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: rgba(245,240,232,0.8); font-weight: 500; line-height: 1; }
+.tab-btn.active .tab-btn-label { color: #F5F0E8; font-weight: 600; letter-spacing: 1.5px; }
+
+.panel { display: none; }
+.panel.active { display: block; animation: fadeUp 0.35s ease; }
+.content { max-width: 680px; margin: 0 auto; padding: 32px 20px 80px; }
+
+.sec-head { margin-bottom: 26px; }
+.sec-num { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--caramel); margin-bottom: 6px; display: block; }
+.sec-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--brown); line-height: 1.15; }
+.sec-line { height: 2px; margin-top: 12px; background: linear-gradient(90deg, var(--caramel), rgba(200,152,58,0.15), transparent); }
+
+.card { background: var(--soft); border-radius: 16px; padding: 24px; margin-bottom: 16px; border: 1px solid rgba(200,152,58,0.14); box-shadow: 0 2px 16px rgba(44,36,22,0.06); }
+.card-dark { background: linear-gradient(135deg, var(--dark), #3A2A14); border: none; color: #F5F0E8; }
+.card-gold { background: #7A9E7E; border: none; box-shadow: 0 4px 16px rgba(74,122,80,0.25), inset 0 0 0 1px rgba(255,255,255,0.12); }
+.card-ivory { background: #F5F0E8; border: 1px solid var(--sand); }
+.card-mostaza { background: var(--caramel); border: none; }
+.card-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--brown); margin-bottom: 14px; }
+.card-mostaza .card-title { color: #F5F0E8; }
+.card-mostaza .checklist li { color: #F5F0E8; border-bottom-color: rgba(245,240,232,0.25); }
+.card-mostaza .check-icon { background: rgba(245,240,232,0.25); color: #F5F0E8; }
+.card-title-light { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: #F5F0E8; margin-bottom: 14px; }
+
+.checklist { list-style: none; padding: 0; }
+.checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(237,229,208,0.7); font-size: 13px; color: var(--text); line-height: 1.5; }
+.checklist li:last-child { border-bottom: none; }
+.check-icon { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--caramel), var(--terra)); display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; margin-top: 1px; color: white; }
+
+.medida-card { background: white; border-radius: 14px; padding: 20px; margin-bottom: 12px; border: 1px solid var(--sand); display: flex; align-items: flex-start; gap: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.medida-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,36,22,0.1); }
+.medida-num { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--caramel), #B8892A); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: white; font-weight: 400; }
+.medida-content { flex: 1; }
+.medida-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--brown); margin-bottom: 5px; }
+.medida-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+.medida-tip { background: #7A9E7E; border-radius: 8px; padding: 8px 12px; font-size: 11px; color: #F5F0E8; line-height: 1.5; font-style: italic; border: none; box-shadow: 0 4px 16px rgba(74,122,80,0.25), inset 0 0 0 1px rgba(255,255,255,0.12); }
+
+.ok-no-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ok-box, .no-box { border-radius: 12px; padding: 16px; font-size: 12px; line-height: 1.6; }
+.ok-box { background: #7A9E7E; border: none; }
+.no-box { background: var(--terra); border: none; }
+.ok-label { font-weight: 600; color: #F5F0E8; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+.no-label { font-weight: 600; color: #F5F0E8; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+.ok-item, .no-item { padding: 4px 0; display: flex; align-items: flex-start; gap: 6px; color: #F5F0E8; }
+.ok-item::before { content: ''; color: #F5F0E8; font-weight: 700; flex-shrink: 0; }
+.no-item::before { content: ''; color: #F5F0E8; font-weight: 700; flex-shrink: 0; }
+
+.necesitas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+@media (max-width: 479px) { .necesitas-grid { grid-template-columns: 1fr 1fr; } }
+.necesita-item { background: white; border-radius: 12px; padding: 16px 10px; text-align: center; border: 1px solid var(--sand); }
+.necesita-icon { font-size: 28px; margin-bottom: 7px; }
+.necesita-text { font-size: 11px; color: var(--text); line-height: 1.4; font-weight: 500; }
+
+.alert { border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; display: flex; gap: 12px; align-items: flex-start; }
+.alert-info { background: #7A9E7E; border: none; border-radius: 12px; box-shadow: 0 4px 16px rgba(74,122,80,0.25), inset 0 0 0 1px rgba(255,255,255,0.12); }
+.alert-warn { background: #7A9E7E; border: none; border-radius: 12px; box-shadow: 0 4px 16px rgba(74,122,80,0.25), inset 0 0 0 1px rgba(255,255,255,0.12); }
+.alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.alert-text { font-size: 13px; color: #F5F0E8; line-height: 1.65; }
+.alert-text strong { color: #ffffff; }
+
+.rostro-medidas { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.rm-card { background: white; border-radius: 12px; padding: 16px 18px; border: 1px solid var(--sand); display: flex; align-items: center; gap: 14px; }
+.rm-badge { background: linear-gradient(135deg, var(--caramel), #B8892A); color: white; border-radius: 8px; padding: 8px 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-align: center; min-width: 54px; flex-shrink: 0; line-height: 1.3; }
+.rm-content { flex: 1; }
+.rm-title { font-size: 13px; font-weight: 500; color: var(--brown); margin-bottom: 3px; }
+.rm-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+.final-cta { background: var(--cream); border: 1px solid var(--sand); border-radius: 18px; padding: 32px 24px; text-align: center; margin-top: 10px; }
+.cta-icon { font-size: 36px; margin-bottom: 12px; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--brown); margin-bottom: 10px; }
+.cta-text { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 420px; margin: 0 auto 20px; }
+.cta-badge { display: inline-block; background: var(--caramel); border: none; border-radius: 20px; padding: 8px 20px; font-size: 11px; letter-spacing: 1.5px; color: #F5F0E8; text-transform: uppercase; }
+
+.ref-img { width: 100%; border-radius: 12px; display: block; object-fit: contain; background: white; }
+.photo-ref-img { width: 100%; border-radius: 14px; display: block; object-fit: contain; background: var(--sand); }
+
+.form-btn-box { border-radius: 14px; border: 1px solid var(--sand); padding: 28px 24px; text-align: center; }
+.form-btn-box-gold { background: white; }
+.form-btn-box-cream { background: var(--cream); }
+.form-btn-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--brown); margin-bottom: 8px; }
+.form-btn-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; max-width: 380px; margin-left: auto; margin-right: auto; }
+.form-open-btn { display: inline-block; background: var(--terra); color: white; text-decoration: none; padding: 14px 32px; border-radius: 30px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 6px 20px rgba(196,113,74,0.45); transition: background 0.2s, box-shadow 0.2s; }
+.form-note { font-size: 10px; color: var(--muted); margin-top: 14px; letter-spacing: 0.5px; }
+.form-open-btn.form-open-btn-mostaza { background: var(--caramel); box-shadow: 0 6px 20px rgba(200,152,58,0.4); }
+
+/* Hidden language content */
+.es { display: block; }
+.en { display: none; }
+
+@media (max-width: 479px) {
+ .hero-title { font-size: 30px; }
+ .ok-no-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+ <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
+ <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+ <div class="hero-eyebrow es">Análisis de Imagen Personal</div>
+ <div class="hero-eyebrow en">Personal Image Analysis</div>
+ <h1 class="hero-title es">Guía <em>Previa</em><br>a tu Sesión</h1>
+ <h1 class="hero-title en">Pre-Session <em>Guide</em></h1>
+ <div class="hero-sub es">Preparación · Medidas · Fotografías</div>
+ <div class="hero-sub en">Preparation · Measurements · Photos</div>
+ <p class="hero-intro es">Para realizar un análisis de imagen preciso y personalizado, necesito que te prepares con anticipación. Esta guía te explica paso a paso todo lo que debes hacer antes de nuestra sesión.</p>
+ <p class="hero-intro en">To perform an accurate and personalized image analysis, I need you to prepare in advance. This guide walks you step by step through everything you need to do before our session.</p>
+ <div class="hero-steps">
+ <span class="hero-step-chip es"> Qué necesitas</span>
+ <span class="hero-step-chip en"> What you need</span>
+ <span class="hero-step-chip es"> Medidas del cuerpo</span>
+ <span class="hero-step-chip en"> Body measurements</span>
+ <span class="hero-step-chip es"> Fotos del rostro</span>
+ <span class="hero-step-chip en"> Face photos</span>
+ </div>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav">
+ <button class="tab-btn active" onclick="showTab('intro',this)">
+ <span class="tab-btn-icon"></span>
+ <span class="tab-btn-label es">Preparación</span>
+ <span class="tab-btn-label en">Preparation</span>
+ </button>
+ <button class="tab-btn" onclick="showTab('cuerpo',this)">
+ <span class="tab-btn-icon"></span>
+ <span class="tab-btn-label es">Cuerpo</span>
+ <span class="tab-btn-label en">Body</span>
+ </button>
+ <button class="tab-btn" onclick="showTab('rostro',this)">
+ <span class="tab-btn-icon"></span>
+ <span class="tab-btn-label es">Rostro</span>
+ <span class="tab-btn-label en">Face</span>
+ </button>
+ <button class="tab-btn" onclick="showTab('color',this)">
+ <span class="tab-btn-icon"></span>
+ <span class="tab-btn-label es">Colorimetría</span>
+ <span class="tab-btn-label en">Color</span>
+ </button>
+ <button class="tab-btn" onclick="showTab('estilo',this)">
+ <span class="tab-btn-icon"></span>
+ <span class="tab-btn-label es">Estilo</span>
+ <span class="tab-btn-label en">Style</span>
+ </button>
+ <button class="tab-btn" onclick="showTab('notas',this)">
+ <span class="tab-btn-icon"></span>
+ <span class="tab-btn-label es">Resumen</span>
+ <span class="tab-btn-label en">Checklist</span>
+ </button>
+</div>
+
+<!-- PANEL: PREPARACIÓN -->
+<div class="panel active" id="panel-intro">
+ <div class="content">
+ <div class="sec-head">
+ <span class="sec-num es">Paso 01</span>
+ <span class="sec-num en">Step 01</span>
+ <div class="sec-title es">Lo que necesitas preparar</div>
+ <div class="sec-title en">What you need to prepare</div>
+ <div class="sec-line"></div>
+ </div>
+
+ <div class="alert alert-info">
+ <span class="alert-icon"></span>
+ <div class="alert-text es">Esta guía tiene <strong>dos partes</strong>: medidas del cuerpo y fotos del rostro. Puedes hacerlo en el mismo día o en días diferentes. Lo importante es tenerlo listo antes de nuestra sesión.</div>
+ <div class="alert-text en">This guide has <strong>two parts</strong>: body measurements and face photos. You can do them on the same day or on different days. What matters is having everything ready before our session.</div>
+ </div>
+
+ <div class="card">
+ <div class="card-title es"> Materiales necesarios</div>
+ <div class="card-title en"> Materials you will need</div>
+ <div class="necesitas-grid">
+ <div class="necesita-item"><div class="necesita-icon"></div><div class="necesita-text es">Cinta métrica flexible</div><div class="necesita-text en">Flexible measuring tape</div></div>
+ <div class="necesita-item"><div class="necesita-icon"></div><div class="necesita-text es">Regla (para medir el rostro)</div><div class="necesita-text en">Ruler (for face measurements)</div></div>
+ <div class="necesita-item"><div class="necesita-icon"></div><div class="necesita-text es">Teléfono con cámara</div><div class="necesita-text en">Phone with camera</div></div>
+ <div class="necesita-item"><div class="necesita-icon"></div><div class="necesita-text es">Una persona que te ayude</div><div class="necesita-text en">Someone to help you</div></div>
+ <div class="necesita-item"><div class="necesita-icon"></div><div class="necesita-text es">Papel y lápiz para anotar</div><div class="necesita-text en">Paper and pen to write down measurements</div></div>
+ <div class="necesita-item"><div class="necesita-icon"></div><div class="necesita-text es">Ropa ajustada de un color</div><div class="necesita-text en">Form-fitting, solid-color clothing</div></div>
+ <div class="necesita-item"><div class="necesita-icon"></div><div class="necesita-text es">Fondo liso (pared)</div><div class="necesita-text en">Plain background (a wall)</div></div>
+ </div>
+ </div>
+
+ <div class="card">
+ <div class="card-title es"> Cómo debes vestirte</div>
+ <div class="card-title en"> How to dress for the photos</div>
+ <div class="ok-no-grid">
+ <div class="ok-box">
+ <span class="ok-label es"> Correcto</span>
+ <span class="ok-label en"> Do this</span>
+ <div class="ok-item es">Ropa ajustada de un solo color</div>
+ <div class="ok-item en">Form-fitting clothing in a single color</div>
+ <div class="ok-item es">Tela lisa sin estampados</div>
+ <div class="ok-item en">Plain fabric, no patterns or prints</div>
+ <div class="ok-item es">Sin accesorios ni cinturones</div>
+ <div class="ok-item en">No accessories or belts</div>
+ <div class="ok-item es">Sin zapatos con taco</div>
+ <div class="ok-item en">No heels or platform shoes</div>
+ </div>
+ <div class="no-box">
+ <span class="no-label es"> Evitar</span>
+ <span class="no-label en"> Avoid</span>
+ <div class="no-item es">Ropa holgada o con estampados</div>
+ <div class="no-item en">Baggy or patterned clothing</div>
+ <div class="no-item es">Fajas o prendas reductoras</div>
+ <div class="no-item en">Shapewear or compression garments</div>
+ <div class="no-item es">Ropa con relleno o acolchado</div>
+ <div class="no-item en">Padded or structured clothing</div>
+ <div class="no-item es">Capas de ropa encimadas</div>
+ <div class="no-item en">Layered outfits</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="card card-ivory">
+ <div class="card-title es"> Condiciones para las fotos</div>
+ <div class="card-title en"> Photo conditions</div>
+ <ul class="checklist">
+ <li><span class="check-icon">✓</span><span class="es">Fondo liso y claro — una pared blanca o beige es perfecta</span><span class="en">Plain, light background — a white or beige wall is perfect</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Buena iluminación — preferiblemente luz natural de día, uniforme y frontal</span><span class="en">Good lighting — preferably natural daylight, even and from the front</span></li>
+ <li><span class="check-icon">✓</span><span class="es"><strong>Sin sombras</strong> — ni en el cuerpo ni en el rostro. Evita la luz lateral o desde atrás</span><span class="en"><strong>No shadows</strong> — not on the body or face. Avoid side or back lighting</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Para el cuerpo: teléfono a nivel del ombligo</span><span class="en">For body photos: phone at belly-button height</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Para el rostro: teléfono a nivel de la nariz</span><span class="en">For face photos: phone at nose height</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Sin filtros ni edición — fotos naturales y reales</span><span class="en">No filters or editing — natural, unretouched photos</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Postura natural, de pie, sin tensar el cuerpo</span><span class="en">Natural posture, standing upright, without tensing your body</span></li>
+ </ul>
+ </div>
+
+ <div class="card card-dark">
+ <div class="card-title-light es">¿Por qué es importante prepararse bien?</div>
+ <div class="card-title-light en">Why is good preparation so important?</div>
+ <p class="es" style="font-size:13px;color:rgba(247,242,235,0.75);line-height:1.85;margin-bottom:12px;">Cuanto más precisa sea la información que recopilemos, más exacto y personalizado será tu análisis de imagen. Las medidas y fotos nos permiten identificar con certeza tu tipo de cuerpo, tipo de rostro y las proporciones exactas para darte recomendaciones que realmente funcionen para ti.</p>
+ <p class="en" style="font-size:13px;color:rgba(247,242,235,0.75);line-height:1.85;margin-bottom:12px;">The more accurate the information we gather, the more precise and personalized your image analysis will be. Measurements and photos allow us to confidently identify your body type, face shape, and exact proportions — so the recommendations I give you will truly work for you.</p>
+ <p class="es" style="font-size:13px;color:rgba(247,242,235,0.6);line-height:1.85;font-style:italic;">"No se trata de cambiar quién eres, sino de descubrir cómo potenciar lo que ya tienes."</p>
+ <p class="en" style="font-size:13px;color:rgba(247,242,235,0.6);line-height:1.85;font-style:italic;">"It's not about changing who you are — it's about discovering how to bring out what you already have."</p>
+ </div>
+ </div>
+</div>
+
+<!-- PANEL: CUERPO / BODY -->
+<div class="panel" id="panel-cuerpo">
+ <div class="content">
+ <div class="sec-head">
+ <span class="sec-num es">Paso 02</span>
+ <span class="sec-num en">Step 02</span>
+ <div class="sec-title es">Medidas y fotos del cuerpo</div>
+ <div class="sec-title en">Body measurements & photos</div>
+ <div class="sec-line"></div>
+ </div>
+
+ <div class="alert alert-info">
+ <span class="alert-icon"></span>
+ <div class="alert-text es">Necesitamos <strong>4 medidas</strong> y <strong>3 fotos</strong>. Puedes anotar las medidas en <strong>centímetros o pulgadas</strong>. Pide a alguien de confianza que te ayude.</div>
+ <div class="alert-text en">We need <strong>4 measurements</strong> and <strong>3 photos</strong>. You can record measurements in <strong>inches or centimeters</strong>. Ask someone you trust to help you.</div>
+ </div>
+
+ <div class="card">
+ <div class="card-title es"> Las 4 medidas del cuerpo</div>
+ <div class="card-title en"> The 4 body measurements</div>
+
+ <div class="medida-card">
+ <div class="medida-num">1</div>
+ <div class="medida-content">
+ <div class="medida-title es">Busto</div>
+ <div class="medida-title en">Bust</div>
+ <div class="medida-desc es">Eleva ligeramente los brazos y mide la circunferencia a nivel de los pezones. Mantén la cinta paralela al suelo, ni muy apretada ni suelta.</div>
+ <div class="medida-desc en">Lift your arms slightly and measure the circumference at nipple level. Keep the tape parallel to the floor — not too tight, not too loose.</div>
+ <div class="medida-tip es"> La cinta debe tocar la piel o la tela sin comprimir. Respira normal al tomar la medida.</div>
+ <div class="medida-tip en"> The tape should touch the skin or fabric without compressing it. Breathe normally when taking the measurement.</div>
+ </div>
+ </div>
+
+ <div class="medida-card">
+ <div class="medida-num">2</div>
+ <div class="medida-content">
+ <div class="medida-title es">Torso</div>
+ <div class="medida-title en">Torso length</div>
+ <div class="medida-desc es">Mide desde la base del cuello (donde el cuello se une con el hombro) hacia abajo hasta la cintura.</div>
+ <div class="medida-desc en">Measure from the base of the neck (where the neck meets the shoulder) straight down to the waist.</div>
+ <div class="medida-tip es"> Mide en línea recta por el centro del cuerpo, de frente. Usa la cinta flexible pegada al cuerpo.</div>
+ <div class="medida-tip en"> Measure in a straight line down the center of the body, from the front. Keep the tape close to the body.</div>
+ </div>
+ </div>
+
+ <div class="medida-card">
+ <div class="medida-num">3</div>
+ <div class="medida-content">
+ <div class="medida-title es">Cintura</div>
+ <div class="medida-title en">Waist</div>
+ <div class="medida-desc es">Posiciona la cinta justo encima del ombligo y mide la circunferencia. Esta es la parte más estrecha del torso.</div>
+ <div class="medida-desc en">Position the tape just above the belly button and measure the circumference. This is the narrowest part of your torso.</div>
+ <div class="medida-tip es"> No metas el abdomen ni lo saques. Postura natural. La cinta va un poco arriba del ombligo.</div>
+ <div class="medida-tip en"> Don't suck in or push out your belly. Natural posture. The tape goes just above the navel.</div>
+ </div>
+ </div>
+
+ <div class="medida-card">
+ <div class="medida-num">4</div>
+ <div class="medida-content">
+ <div class="medida-title es">Cadera</div>
+ <div class="medida-title en">Hips</div>
+ <div class="medida-desc es">Posiciona la cinta justo debajo del hueso de la cadera, en la zona más ancha de los glúteos y caderas.</div>
+ <div class="medida-desc en">Position the tape just below the hip bone, at the widest part of your glutes and hips.</div>
+ <div class="medida-tip es"> Párate derecha con los pies juntos. La medida debe tomarse en la parte más prominente.</div>
+ <div class="medida-tip en"> Stand straight with feet together. The measurement should be taken at the most prominent point.</div>
+ </div>
+ </div>
+ </div>
+
+ <!-- FOTOS CUERPO -->
+ <div class="card">
+ <div class="card-title es"> Las 3 fotos del cuerpo</div>
+ <div class="card-title en"> The 3 body photos</div>
+
+ <div class="alert alert-warn" style="margin-bottom:16px;">
+ <span class="alert-icon"></span>
+ <div class="alert-text es"><strong>Posición del teléfono:</strong> A nivel del ombligo, completamente recto. De pies a cabeza desde <strong>2 a 3 metros de distancia</strong>. <strong>Sin sombras.</strong> Sin filtros. Sin espejo.</div>
+ <div class="alert-text en"><strong>Phone position:</strong> At belly-button height, completely level. Full body from <strong>6 to 10 feet away</strong>. <strong>No shadows.</strong> No filters. No mirror.</div>
+ </div>
+
+ <div style="margin-bottom:20px;">
+ <img src="cuerpo-frente.png" alt="Referencia fotos cuerpo" class="photo-ref-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+ <div style="display:none;background:var(--sand);border-radius:14px;min-height:220px;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:2px dashed rgba(200,160,80,0.45);">
+ <span style="font-size:28px;"></span>
+ <span class="es" style="font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;">Imagen de referencia de fotos</span>
+ <span class="en" style="font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;">Photo reference image</span>
+ </div>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:10px;">
+ <div style="text-align:center;">
+ <div class="es" style="font-size:12px;font-weight:600;color:var(--brown);">De frente</div>
+ <div class="en" style="font-size:12px;font-weight:600;color:var(--brown);">Front</div>
+ </div>
+ <div style="text-align:center;">
+ <div class="es" style="font-size:12px;font-weight:600;color:var(--brown);">De perfil</div>
+ <div class="en" style="font-size:12px;font-weight:600;color:var(--brown);">Side</div>
+ </div>
+ <div style="text-align:center;">
+ <div class="es" style="font-size:12px;font-weight:600;color:var(--brown);">De espalda</div>
+ <div class="en" style="font-size:12px;font-weight:600;color:var(--brown);">Back</div>
+ </div>
+ </div>
+ </div>
+
+ <div style="background:rgba(176,120,80,0.08);border:1px solid rgba(176,120,80,0.3);border-radius:12px;padding:16px 18px;">
+ <div class="es" style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--terra);text-transform:uppercase;margin-bottom:10px;"> Muy importante</div>
+ <div class="en" style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--terra);text-transform:uppercase;margin-bottom:10px;"> Very important</div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+ <div style="font-size:11px;color:var(--text);display:flex;gap:6px;"><span style="color:var(--terra);">—</span><span class="es">Sin sombras marcadas</span><span class="en">No harsh shadows</span></div>
+ <div style="font-size:11px;color:var(--text);display:flex;gap:6px;"><span style="color:var(--terra);">—</span><span class="es">Sin filtros</span><span class="en">No filters</span></div>
+ <div style="font-size:11px;color:var(--text);display:flex;gap:6px;"><span style="color:var(--terra);">—</span><span class="es">Sin espejo</span><span class="en">No mirror</span></div>
+ <div style="font-size:11px;color:var(--text);display:flex;gap:6px;"><span style="color:var(--terra);">—</span><span class="es">Cámara recta y paralela</span><span class="en">Camera straight and level</span></div>
+ <div style="font-size:11px;color:var(--text);display:flex;gap:6px;"><span style="color:var(--terra);">—</span><span class="es">Sin inclinar el celular</span><span class="en">Don't tilt the phone</span></div>
+ <div style="font-size:11px;color:var(--terra);font-weight:500;display:flex;gap:6px;"><span>—</span><span class="es">Distancia: 2 a 3 metros</span><span class="en">Distance: 6 to 10 feet</span></div>
+ </div>
+ </div>
+ </div>
+
+ <!-- REFERENCIA MEDIDAS CUERPO -->
+ <div class="card card-ivory">
+ <div class="card-title es"> Referencia visual — Cómo tomar las medidas</div>
+ <div class="card-title en"> Visual reference — How to take body measurements</div>
+ <img id="img-medidas-cuerpo-es" src="medidas-cuerpo-es.png" alt="Referencia medidas cuerpo" class="ref-img">
+ <img id="img-medidas-cuerpo-en" src="medidas-cuerpo-en.png" alt="Body measurements reference" class="ref-img" style="display:none;">
+ </div>
+
+ <!-- FORMULARIO CUERPO -->
+ <div class="card card-ivory">
+ <div class="card-title es"> Formulario de diagnóstico — Cuerpo</div>
+ <div class="card-title en"> Diagnostic form — Body</div>
+ <div class="form-btn-box form-btn-gold">
+ <div style="font-size:36px;margin-bottom:12px;"></div>
+ <div class="form-btn-title es">Formulario de Medidas del Cuerpo</div>
+ <div class="form-btn-title en">Body Measurements Form</div>
+ <div class="form-btn-desc es">Completa el formulario con tus medidas y sube tus fotos. Se abrirá en una nueva pestaña.</div>
+ <div class="form-btn-desc en">Fill in the form with your measurements and upload your photos. It will open in a new tab.</div>
+ <a class="form-open-btn es" href="https://docs.google.com/forms/d/e/1FAIpQLSfVfIDMQOZnavm6Kx-WP3YwJBuYShumwwXtpxYumxRdZTgXdw/viewform" target="_blank">Abrir Formulario →</a>
+ <a class="form-open-btn en" href="https://docs.google.com/forms/d/e/1FAIpQLSc6w4yIAkQczIYTlxGkdGal8x5rxOwQ2yE1rgqgZmpH8CXHTw/viewform" target="_blank">Open Form →</a>
+ <p class="form-note es">Se abrirá en una nueva pestaña</p>
+ <p class="form-note en">Will open in a new tab</p>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- PANEL: ROSTRO / FACE -->
+<div class="panel" id="panel-rostro">
+ <div class="content">
+ <div class="sec-head">
+ <span class="sec-num es">Paso 03</span>
+ <span class="sec-num en">Step 03</span>
+ <div class="sec-title es">Medidas y fotos del rostro</div>
+ <div class="sec-title en">Face measurements & photos</div>
+ <div class="sec-line"></div>
+ </div>
+
+ <div class="alert alert-info">
+ <span class="alert-icon"></span>
+ <div class="alert-text es">Necesitamos <strong>4 medidas</strong> y <strong>3 fotos</strong> del rostro. Necesitas una <strong>regla</strong> (no cinta métrica) para mayor precisión.</div>
+ <div class="alert-text en">We need <strong>4 measurements</strong> and <strong>3 photos</strong> of your face. Use a <strong>ruler</strong> (not a measuring tape) for greater accuracy.</div>
+ </div>
+
+ <div class="card">
+ <div class="card-title es"> Las 4 medidas del rostro</div>
+ <div class="card-title en"> The 4 face measurements</div>
+ <div class="rostro-medidas">
+ <div class="rm-card">
+ <div class="rm-badge es">MEDIDA<br>VERTICAL</div>
+ <div class="rm-badge en">VERTICAL<br>LENGTH</div>
+ <div class="rm-content">
+ <div class="rm-title es">Longitud del rostro</div>
+ <div class="rm-title en">Face length</div>
+ <div class="rm-desc es">Desde el borde donde comienza el pelo en la frente hasta la base del mentón. Mide en línea recta por el centro del rostro.</div>
+ <div class="rm-desc en">From the edge of your hairline at the top of your forehead straight down to the bottom of your chin.</div>
+ </div>
+ </div>
+ <div class="rm-card">
+ <div class="rm-badge es">HORIZ.<br>1</div>
+ <div class="rm-badge en">HORIZ.<br>1</div>
+ <div class="rm-content">
+ <div class="rm-title es">Ancho de la sien</div>
+ <div class="rm-title en">Temple width</div>
+ <div class="rm-desc es">Mide de sien a sien — de un lado al otro, pasando por la zona de la frente.</div>
+ <div class="rm-desc en">Measure from temple to temple — side to side across the forehead area.</div>
+ </div>
+ </div>
+ <div class="rm-card">
+ <div class="rm-badge es">HORIZ.<br>2</div>
+ <div class="rm-badge en">HORIZ.<br>2</div>
+ <div class="rm-content">
+ <div class="rm-title es">Ancho de los pómulos</div>
+ <div class="rm-title en">Cheekbone width</div>
+ <div class="rm-desc es">Mide de pómulo a pómulo, a la altura de la oreja aproximadamente.</div>
+ <div class="rm-desc en">Measure from cheekbone to cheekbone, approximately at ear level.</div>
+ </div>
+ </div>
+ <div class="rm-card">
+ <div class="rm-badge es">HORIZ.<br>3</div>
+ <div class="rm-badge en">HORIZ.<br>3</div>
+ <div class="rm-content">
+ <div class="rm-title es">Ancho de la mandíbula</div>
+ <div class="rm-title en">Jawline width</div>
+ <div class="rm-desc es">Mide de mandíbula a mandíbula, justo donde el hueso comienza a ir hacia adelante.</div>
+ <div class="rm-desc en">Measure from jaw to jaw, right where the bone starts to angle forward.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- FOTOS ROSTRO -->
+ <div class="card">
+ <div class="card-title es"> Las 3 fotos del rostro</div>
+ <div class="card-title en"> The 3 face photos</div>
+
+ <div class="alert alert-warn" style="margin-bottom:16px;">
+ <span class="alert-icon"></span>
+ <div class="alert-text es"><strong>Posición del teléfono:</strong> A nivel de la nariz, completamente recto. Luz natural frontal. <strong>Sin sombras en el rostro.</strong> Sin filtros. Cabello recogido.</div>
+ <div class="alert-text en"><strong>Phone position:</strong> At nose height, completely level. Natural front lighting. <strong>No shadows on the face.</strong> No filters. Hair pulled back.</div>
+ </div>
+
+ <div style="margin-bottom:16px;">
+ <img src="rostro-frente.png" alt="Referencia fotos rostro" class="photo-ref-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+ <div style="display:none;background:var(--sand);border-radius:14px;min-height:220px;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:2px dashed rgba(200,160,80,0.45);">
+ <span style="font-size:28px;"></span>
+ <span class="es" style="font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;">Imagen de referencia de fotos</span>
+ <span class="en" style="font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;">Photo reference image</span>
+ </div>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:10px;">
+ <div style="text-align:center;">
+ <div class="es" style="font-size:12px;font-weight:600;color:var(--brown);">De frente</div>
+ <div class="en" style="font-size:12px;font-weight:600;color:var(--brown);">Front</div>
+ </div>
+ <div style="text-align:center;">
+ <div class="es" style="font-size:12px;font-weight:600;color:var(--brown);">Perfil derecho</div>
+ <div class="en" style="font-size:12px;font-weight:600;color:var(--brown);">Right profile</div>
+ </div>
+ <div style="text-align:center;">
+ <div class="es" style="font-size:12px;font-weight:600;color:var(--brown);">Perfil izquierdo</div>
+ <div class="en" style="font-size:12px;font-weight:600;color:var(--brown);">Left profile</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- REFERENCIA MEDIDAS ROSTRO -->
+ <div class="card card-ivory">
+ <div class="card-title es"> Referencia visual — Cómo tomar las medidas del rostro</div>
+ <div class="card-title en"> Visual reference — How to take face measurements</div>
+ <img id="img-medidas-rostro-es" src="medidas-rostro-es.png" alt="Referencia medidas rostro" class="ref-img">
+ <img id="img-medidas-rostro-en" src="medidas-rostro-en.png" alt="Face measurements reference" class="ref-img" style="display:none;">
+ </div>
+
+ <!-- FORMULARIO ROSTRO -->
+ <div class="card">
+ <div class="card-title es"> Formulario de diagnóstico — Rostro</div>
+ <div class="card-title en"> Diagnostic form — Face</div>
+ <div class="form-btn-box form-btn-cream">
+ <div style="font-size:36px;margin-bottom:12px;"></div>
+ <div class="form-btn-title es">Formulario de Medidas del Rostro</div>
+ <div class="form-btn-title en">Face Measurements Form</div>
+ <div class="form-btn-desc es">Completa el formulario con tus medidas del rostro y sube tus fotos. Se abrirá en una nueva pestaña.</div>
+ <div class="form-btn-desc en">Fill in the form with your face measurements and upload your photos. It will open in a new tab.</div>
+ <a class="form-open-btn es" href="https://docs.google.com/forms/d/e/1FAIpQLSchEq-GkOe333O_I2aF0Je6MNtupcwi97QP07RK3OF8isd7vw/viewform" target="_blank">Abrir Formulario →</a>
+ <a class="form-open-btn en" href="https://docs.google.com/forms/d/e/1FAIpQLScKmNJvMmZvqgM70_eJe3z6WCDxycLXOj9m0472gOob5PQMFA/viewform" target="_blank">Open Form →</a>
+ <p class="form-note es">Se abrirá en una nueva pestaña</p>
+ <p class="form-note en">Will open in a new tab</p>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- PANEL: COLORIMETRÍA -->
+<div class="panel" id="panel-color">
+ <div class="content">
+ <div class="sec-head">
+ <span class="sec-num es">Módulo 03</span>
+ <span class="sec-num en">Module 03</span>
+ <div class="sec-title es">Análisis de Color</div>
+ <div class="sec-title en">Color Analysis</div>
+ <div class="sec-line"></div>
+ </div>
+
+ <div class="alert alert-info">
+ <span class="alert-icon"></span>
+ <div class="alert-text es">Las fotos para colorimetría requieren condiciones específicas de luz y fondo. Sigue estas instrucciones con cuidado — la precisión del análisis depende de ello.</div>
+ <div class="alert-text en">Color analysis photos require specific lighting and background conditions. Follow these instructions carefully — the accuracy of your analysis depends on it.</div>
+ </div>
+
+ <div class="card card-ivory">
+ <div class="card-title es">Condiciones para las fotos de color</div>
+ <div class="card-title en">Color photo conditions</div>
+ <ul class="checklist">
+ <li><span class="check-icon">✓</span><span class="es"><strong>Sin maquillaje</strong> — rostro completamente limpio y natural</span><span class="en"><strong>No makeup</strong> — face completely clean and natural</span></li>
+ <li><span class="check-icon">✓</span><span class="es"><strong>Luz natural únicamente</strong> — cerca de una ventana, sin luz artificial directa</span><span class="en"><strong>Natural light only</strong> — near a window, no direct artificial light</span></li>
+ <li><span class="check-icon">✓</span><span class="es"><strong>Fondo blanco o neutro</strong> — una pared blanca o beige muy claro</span><span class="en"><strong>White or neutral background</strong> — a white or very light beige wall</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Cabello recogido completamente — que el cuello y los hombros queden visibles</span><span class="en">Hair fully pulled back — neck and shoulders must be visible</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Ropa blanca o de cuello alto neutro — que no proyecte color sobre el rostro</span><span class="en">White clothing or neutral high neckline — nothing that reflects color onto the face</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Sin filtros, sin edición de color — foto completamente natural</span><span class="en">No filters, no color editing — completely natural photo</span></li>
+ </ul>
+ </div>
+
+ <div class="card">
+ <div class="card-title es">Las 3 fotos de colorimetría</div>
+ <div class="card-title en">The 3 color analysis photos</div>
+
+ <div class="rostro-medidas">
+ <div class="rm-card">
+ <div class="rm-badge es">FOTO<br>1</div>
+ <div class="rm-badge en">PHOTO<br>1</div>
+ <div class="rm-content">
+ <div class="rm-title es">Rostro de frente — luz natural lateral</div>
+ <div class="rm-title en">Face front — natural side light</div>
+ <div class="rm-desc es">Párate frente a una ventana con la luz entrando desde un lado. Esta foto captura la profundidad real de tu tono de piel.</div>
+ <div class="rm-desc en">Stand facing a window with light coming from one side. This photo captures the true depth of your skin tone.</div>
+ </div>
+ </div>
+ <div class="rm-card">
+ <div class="rm-badge es">FOTO<br>2</div>
+ <div class="rm-badge en">PHOTO<br>2</div>
+ <div class="rm-content">
+ <div class="rm-title es">Rostro de frente — luz natural frontal</div>
+ <div class="rm-title en">Face front — natural front light</div>
+ <div class="rm-desc es">De frente a la ventana, luz uniforme sobre todo el rostro. Esta foto muestra el tono base sin sombras.</div>
+ <div class="rm-desc en">Facing the window, even light across the whole face. This photo shows your base tone without shadows.</div>
+ </div>
+ </div>
+ <div class="rm-card">
+ <div class="rm-badge es">FOTO<br>3</div>
+ <div class="rm-badge en">PHOTO<br>3</div>
+ <div class="rm-content">
+ <div class="rm-title es">Muñeca interior — luz natural</div>
+ <div class="rm-title en">Inner wrist — natural light</div>
+ <div class="rm-desc es">Foto de la parte interior de tu muñeca donde se ven las venas. Esta imagen revela tu subtono: azul/morado = frío, verde = cálido, ambos = neutro.</div>
+ <div class="rm-desc en">Photo of the inside of your wrist where veins are visible. This reveals your undertone: blue/purple = cool, green = warm, both = neutral.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="card card-ivory">
+ <div class="card-title es">Formulario de Colorimetría</div>
+ <div class="card-title en">Color Analysis Form</div>
+ <div class="form-btn-box form-btn-box-gold">
+ <div class="form-btn-title es">Formulario de Análisis de Color</div>
+ <div class="form-btn-title en">Color Analysis Form</div>
+ <div class="form-btn-desc es">Sube tus 3 fotos de colorimetría y responde las preguntas sobre tu tono de piel. Se abrirá en una nueva pestaña.</div>
+ <div class="form-btn-desc en">Upload your 3 color analysis photos and answer the skin tone questions. Will open in a new tab.</div>
+ <!-- ✏️ EDITAR: reemplazar # con el link real del formulario -->
+ <a class="form-open-btn es" href="#" target="_blank">Abrir Formulario →</a>
+ <a class="form-open-btn en" href="#" target="_blank">Open Form →</a>
+ <p class="form-note es">Se abrirá en una nueva pestaña</p>
+ <p class="form-note en">Will open in a new tab</p>
+ </div>
+ </div>
+
+ </div>
+</div>
+
+<!-- PANEL: ESTILO -->
+<div class="panel" id="panel-estilo">
+ <div class="content">
+ <div class="sec-head">
+ <span class="sec-num es">Módulo 04</span>
+ <span class="sec-num en">Module 04</span>
+ <div class="sec-title es">Estilo Personal</div>
+ <div class="sec-title en">Personal Style</div>
+ <div class="sec-line"></div>
+ </div>
+
+ <div class="alert alert-info">
+ <span class="alert-icon"></span>
+ <div class="alert-text es">No hay respuestas correctas ni incorrectas. Este módulo es para conocerte mejor y entender cómo expresas tu personalidad a través de la ropa.</div>
+ <div class="alert-text en">There are no right or wrong answers. This module is about getting to know you better and understanding how you express your personality through clothing.</div>
+ </div>
+
+ <div class="card">
+ <div class="card-title es">¿Qué necesitamos?</div>
+ <div class="card-title en">What do we need?</div>
+ <div class="rostro-medidas">
+ <div class="rm-card">
+ <div class="rm-badge es">PASO<br>1</div>
+ <div class="rm-badge en">STEP<br>1</div>
+ <div class="rm-content">
+ <div class="rm-title es">Formulario de estilo</div>
+ <div class="rm-title en">Style questionnaire</div>
+ <div class="rm-desc es">Preguntas sobre tu lifestyle, cómo te gusta verte, qué ocasiones vistes y cuáles son tus retos actuales con la ropa.</div>
+ <div class="rm-desc en">Questions about your lifestyle, how you like to look, what occasions you dress for, and your current challenges with clothing.</div>
+ </div>
+ </div>
+ <div class="rm-card">
+ <div class="rm-badge es">PASO<br>2</div>
+ <div class="rm-badge en">STEP<br>2</div>
+ <div class="rm-content">
+ <div class="rm-title es">Fotos de inspiración</div>
+ <div class="rm-title en">Inspiration photos</div>
+ <div class="rm-desc es">3 a 5 fotos de outfits, personas o estilos que te inspiren o que sientas que representan cómo quieres verte. Pueden ser de Pinterest, Instagram o revistas.</div>
+ <div class="rm-desc en">3 to 5 photos of outfits, people, or styles that inspire you or that feel like how you want to look. These can be from Pinterest, Instagram, or magazines.</div>
+ </div>
+ </div>
+ <div class="rm-card">
+ <div class="rm-badge es">PASO<br>3</div>
+ <div class="rm-badge en">STEP<br>3</div>
+ <div class="rm-content">
+ <div class="rm-title es">Foto de tu clóset (opcional)</div>
+ <div class="rm-title en">Closet photo (optional)</div>
+ <div class="rm-desc es">Una foto general de tu clóset o cajones nos ayuda a entender tu punto de partida y hacer recomendaciones más concretas.</div>
+ <div class="rm-desc en">A general photo of your closet or drawers helps us understand your starting point and make more concrete recommendations.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="card card-ivory">
+ <div class="card-title es">Formulario de Estilo Personal</div>
+ <div class="card-title en">Personal Style Form</div>
+ <div class="form-btn-box form-btn-box-gold">
+ <div class="form-btn-title es">Cuestionario de Estilo</div>
+ <div class="form-btn-title en">Style Questionnaire</div>
+ <div class="form-btn-desc es">Completa el cuestionario y sube tus fotos de inspiración. Se abrirá en una nueva pestaña.</div>
+ <div class="form-btn-desc en">Complete the questionnaire and upload your inspiration photos. Will open in a new tab.</div>
+ <!-- ✏️ EDITAR: reemplazar # con el link real del formulario -->
+ <a class="form-open-btn es" href="#" target="_blank">Abrir Formulario →</a>
+ <a class="form-open-btn en" href="#" target="_blank">Open Form →</a>
+ <p class="form-note es">Se abrirá en una nueva pestaña</p>
+ <p class="form-note en">Will open in a new tab</p>
+ </div>
+ </div>
+
+ </div>
+</div>
+
+<!-- PANEL: NOTAS / CHECKLIST -->
+<div class="panel" id="panel-notas">
+ <div class="content">
+ <div class="sec-head">
+ <span class="sec-num es">Resumen</span>
+ <span class="sec-num en">Summary</span>
+ <div class="sec-title es">Lista de verificación</div>
+ <div class="sec-title en">Verification checklist</div>
+ <div class="sec-line"></div>
+ </div>
+
+ <div class="alert alert-info">
+ <span class="alert-icon"></span>
+ <div class="alert-text es">Confirma que has completado y enviado todo lo necesario para que podamos iniciar tu análisis de imagen personal.</div>
+ <div class="alert-text en">Confirm that you have completed and submitted everything needed so we can begin your personal image analysis.</div>
+ </div>
+
+ <div class="card">
+ <div class="card-title es">Cuerpo y Rostro</div>
+ <div class="card-title en">Body and Face</div>
+ <ul class="checklist">
+ <li><span class="check-icon">1</span><span class="es"><strong>Medidas del cuerpo enviadas:</strong> Busto, torso, cintura y cadera</span><span class="en"><strong>Body measurements submitted:</strong> Bust, torso, waist, and hips</span></li>
+ <li><span class="check-icon">2</span><span class="es"><strong>Fotos del cuerpo enviadas:</strong> Frente, perfil y espalda — sin filtros, fondo liso</span><span class="en"><strong>Body photos submitted:</strong> Front, side, and back — no filters, plain background</span></li>
+ <li><span class="check-icon">3</span><span class="es"><strong>Medidas del rostro enviadas:</strong> Vertical, sien, pómulos y mandíbula</span><span class="en"><strong>Face measurements submitted:</strong> Length, temple, cheekbone, and jaw width</span></li>
+ <li><span class="check-icon">4</span><span class="es"><strong>Fotos del rostro enviadas:</strong> Frente, perfil derecho e izquierdo</span><span class="en"><strong>Face photos submitted:</strong> Front, right profile, and left profile</span></li>
+ </ul>
+ </div>
+
+ <div class="card">
+ <div class="card-title es">Colorimetría y Estilo</div>
+ <div class="card-title en">Color and Style</div>
+ <ul class="checklist">
+ <li><span class="check-icon">5</span><span class="es"><strong>Fotos de colorimetría enviadas:</strong> Luz lateral, luz frontal y muñeca interior</span><span class="en"><strong>Color analysis photos submitted:</strong> Side light, front light, and inner wrist</span></li>
+ <li><span class="check-icon">6</span><span class="es"><strong>Cuestionario de estilo completado:</strong> Formulario respondido y fotos de inspiración incluidas</span><span class="en"><strong>Style questionnaire completed:</strong> Form answered and inspiration photos included</span></li>
+ </ul>
+ </div>
+
+ <div class="card card-mostaza">
+ <div class="card-title es">¿Cómo enviarme la información?</div>
+ <div class="card-title en">How to send me your information</div>
+ <ul class="checklist">
+ <li><span class="check-icon">✓</span><span class="es">Envía todo a través de los formularios de cada sección — están diseñados para recibirlo todo en orden</span><span class="en">Submit everything through the forms in each section — they're designed to receive everything in order</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Si tomaste las fotos en diferentes días, etiquétalas claramente antes de subirlas</span><span class="en">If you took photos on different days, label them clearly before uploading</span></li>
+ <li><span class="check-icon">✓</span><span class="es">Ante cualquier duda, escríbeme antes de la sesión — siempre es mejor preguntar</span><span class="en">If you have any doubts, reach out before the session — it's always better to ask</span></li>
+ </ul>
+ </div>
+
+ <div class="final-cta">
+ <div class="cta-icon"></div>
+ <div class="cta-title es">¡Estoy lista para conocerte!</div>
+ <div class="cta-title en">I can't wait to meet you!</div>
+ <div class="cta-text es">Una vez que tenga toda tu información, comenzaremos juntas el proceso de descubrir y potenciar tu imagen personal única.</div>
+ <div class="cta-text en">Once I have all your information, we'll begin the beautiful process of discovering and bringing out your unique personal image together.</div>
+ <span class="cta-badge es">Tu Asesora de Imagen</span>
+ <span class="cta-badge en">Your Image Consultant</span>
+ </div>
+ </div>
+</div>
+
+<script>
+// LANGUAGE TOGGLE 
+function setLang(lang, btn) {
+ document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+
+ const inlineTags = ['SPAN', 'A', 'BUTTON'];
+ const inlineBlockClasses = ['form-open-btn', 'cta-badge', 'ok-label', 'no-label', 'hero-step-chip', 'sec-num', 'tab-btn-label', 'rm-badge'];
+
+ ['es', 'en'].forEach(lng => {
+ const show = lng === lang;
+ document.querySelectorAll('.' + lng).forEach(el => {
+ if (!show) {
+ el.style.display = 'none';
+ } else {
+ const isInlineBlock = inlineBlockClasses.some(cls => el.classList.contains(cls));
+ if (isInlineBlock) {
+ el.style.display = 'inline-block';
+ } else if (inlineTags.includes(el.tagName)) {
+ el.style.display = 'inline';
+ } else {
+ el.style.display = 'block';
+ }
+ }
+ });
+ });
+
+ // Swap bilingual measurement images
+ const imgPairs = [
+ ['img-medidas-cuerpo-es', 'img-medidas-cuerpo-en'],
+ ['img-medidas-rostro-es', 'img-medidas-rostro-en']
+ ];
+ imgPairs.forEach(([esId, enId]) => {
+ const esImg = document.getElementById(esId);
+ const enImg = document.getElementById(enId);
+ if (esImg) esImg.style.display = lang === 'es' ? 'block' : 'none';
+ if (enImg) enImg.style.display = lang === 'en' ? 'block' : 'none';
+ });
+}
+
+// TAB NAVIGATION 
+function showTab(name, btn) {
+ document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+ document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+ document.getElementById('panel-' + name).classList.add('active');
+ btn.classList.add('active');
+ window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop - 10, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
