@@ -1,0 +1,929 @@
+
+/* ════════════════════════════════════════════════════════════
+   POIEMAHAUS — Asesoría de Imagen Premium
+   styles.css — Sistema de diseño editorial
+   ════════════════════════════════════════════════════════════ */
+
+/* ── RESET & BASE ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── NAV PREMIUM — 7 ítems limpios ────────────────────────── */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 0 24px;
+  background: rgba(255,252,248,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(194,113,79,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+nav button {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9B8E7C;
+  background: transparent;
+  border: none;
+  padding: 18px 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+nav button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1.5px;
+  background: #C2714F;
+  transition: width 0.25s ease;
+}
+
+nav button:hover { color: #3D4E48; }
+nav button:hover::after { width: 60%; }
+
+nav button.active {
+  color: #2F4A4F;
+  font-weight: 600;
+}
+nav button.active::after { width: 60%; }
+
+/* Bridal button — premium diferenciado */
+#btn-novia {
+  color: #C2714F !important;
+  letter-spacing: 2.5px;
+}
+#btn-novia::before {
+  content: '✦ ';
+  font-size: 8px;
+  opacity: 0.7;
+}
+#btn-novia.active,
+#btn-novia:hover { color: #A05A38 !important; }
+
+/* ── SECTION DIVIDER ────────────────────────────────────────── */
+.sec-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(194,113,79,0.2), transparent);
+  margin: 48px 0;
+}
+
+/* ── SECTION TITLES dentro de secciones mergeadas ───────────── */
+.subsec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #9B8E7C;
+  text-align: center;
+  margin-bottom: 32px;
+  padding-top: 8px;
+}
+
+/* ── BRIDAL SECTION ─────────────────────────────────────────── */
+.section-bridal {
+  background: linear-gradient(180deg, rgba(255,252,248,1) 0%, rgba(248,244,238,0.6) 100%);
+}
+
+.bridal-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  color: #9B8E7C;
+  letter-spacing: 0.5px;
+}
+
+/* ── HEADER REFINEMENTS ─────────────────────────────────────── */
+.header-logo-wrap img {
+  max-width: 140px;
+  height: auto;
+}
+
+/* ── SMOOTH SECTION TRANSITIONS ────────────────────────────── */
+section {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+section.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ── SCROLLBAR PREMIUM ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(194,113,79,0.3); border-radius: 2px; }
+
+/* ── PRINT / FUTURE PDF ─────────────────────────────────────── */
+@media print {
+  nav, #btn-novia { display: none; }
+  section { display: block !important; }
+  .sec-divider { border-top: 1px solid #eee; background: none; }
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  nav { gap: 0; padding: 0 8px; }
+  nav button { padding: 14px 8px; font-size: 9px; letter-spacing: 1.5px; }
+  .container { padding: 24px 16px; }
+}
+
+
+/* ════ ORIGINAL STYLES ════ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Cormorant Garamond', serif; background: #F8F5F1; }
+.header-logo-strip {
+  width: 100%;
+  background: #FFFFFF;
+  display: block;
+  line-height: 0;
+}
+.header-logo-strip img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 4%;
+  height: 130px;
+}
+.header {
+  background: linear-gradient(160deg, #2F4A4F 0%, #3d6068 50%, #4E5D56 100%);
+  padding: 36px 20px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(194,113,79,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.header-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.header-logo-wrap {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-logo-img {
+  width: 90px;
+  height: 90px;
+  display: block;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+.header-brand-name {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  letter-spacing: 8px !important;
+  color: #F8F5F1 !important;
+  line-height: 1 !important;
+  display: block !important;
+}
+.header-brand-line {
+  width: 40px !important;
+  height: 1.5px !important;
+  background: #C2714F !important;
+  margin: 9px auto !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+.header-brand-haus {
+  font-family: "Inter", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 300 !important;
+  letter-spacing: 6px !important;
+  color: rgba(248,245,241,0.8) !important;
+  display: block !important;
+}
+
+.header-divider-line {
+  width: 48px;
+  height: 1px;
+  background: #C2714F;
+  margin: 0 auto 18px;
+  opacity: 0.7;
+}
+.header-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: rgba(253,246,238,0.65);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.header h1 {
+  font-size: 30px;
+  color: #F8F5F1;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.header-sub { font-size: 13px; color: rgba(253,246,238,0.9); letter-spacing: 3px; font-family: 'Inter', sans-serif; }
+.header-tag { margin-top: 10px; font-size: 13px; color: rgba(253,246,238,0.6); font-style: italic; font-family: 'Inter', sans-serif; }
+
+nav::-webkit-scrollbar { display: none; }
+nav button { padding: 14px 16px; border: none; cursor: pointer; white-space: nowrap; font-size: 11px; letter-spacing: 1px; font-family: 'Inter', sans-serif; background: transparent; color: #B8C4C0; border-bottom: 2px solid transparent; transition: all 0.3s; }
+nav button.active { background: #C2714F; color: #F8F5F1; border-bottom: 2px solid #7A9080; }
+nav button:hover:not(.active) { color: #F8F5F1; background: rgba(194,113,79,0.2); }
+
+.container { max-width: 980px; margin: 0 auto; padding: 35px 20px; }
+section { display: none; animation: fadeIn 0.4s ease; }
+section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.sec-title { color: #5B7B6F; font-size: 26px; font-weight: 300; margin-bottom: 10px; }
+.sec-intro { color: #3D4E48; line-height: 1.9; margin-bottom: 28px; font-size: 15px; font-family: 'Inter', sans-serif; }
+.white-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 14px rgba(194,113,79,0.1); }
+.two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; }
+.three-cols { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: 22px; }
+.dark-box { background: #2F4A4F; border-radius: 14px; padding: 28px; color: #B8C4C0; margin-bottom: 22px; }
+.list-item { padding: 7px 0; border-bottom: 1px solid rgba(180,196,192,0.3); color: #3D4E48; font-size: 13px; font-family: 'Inter', sans-serif; }
+.tip-box { padding: 14px; background: #F0F4F2; border-radius: 10px; font-size: 13px; color: #5B7B6F; line-height: 1.6; font-family: 'Inter', sans-serif; margin-top: 16px; }
+.card-h3 { font-size: 17px; margin-bottom: 16px; }
+.brown { color: #5B7B6F; } .terra { color: #C2714F; } .teal { color: #4A7A75; }
+
+/* GARMENTS */
+.garment-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; margin-bottom: 24px; }
+.garment-card { background: white; border-radius: 14px; padding: 14px 8px 12px; text-align: center; box-shadow: 0 2px 10px rgba(194,113,79,0.1); transition: transform 0.25s, box-shadow 0.25s; cursor: default; }
+.garment-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(194,113,79,0.2); }
+.garment-card svg { width: 80px; height: 100px; margin: 0 auto 8px; display: block; }
+.garment-name { font-size: 11px; color: #2F4A4F; font-weight: 700; margin-bottom: 3px; font-family: 'Inter', sans-serif; }
+.garment-tip { font-size: 10px; color: #6B7C76; line-height: 1.4; font-style: italic; font-family: 'Inter', sans-serif; }
+
+/* PALETTE */
+.palette-grid { display: grid; grid-template-columns: repeat(8,1fr); gap: 10px; margin-bottom: 20px; }
+.swatch { text-align: center; }
+.swatch-box { width: 100%; padding-bottom: 100%; border-radius: 10px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin-bottom: 6px; }
+.swatch-fill { position: absolute; inset: 0; border-radius: 10px; }
+.swatch-name { font-size: 10px; color: #3D4E48; font-family: 'Inter', sans-serif; line-height: 1.3; }
+
+/* HAIR */
+.hair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 24px; }
+.hair-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 22px rgba(194,113,79,0.15); }
+.hair-header { background: #5B7B6F; padding: 22px 20px 18px; color: white; text-align: center; }
+.hair-body { padding: 22px; }
+.hair-color-box { background: #F0F4F2; border-radius: 8px; padding: 12px; margin: 12px 0; font-size: 12px; color: #C2714F; font-family: 'Inter', sans-serif; }
+
+/* ACCESSORIES */
+.acc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: 24px; }
+.acc-card { background: white; border-radius: 16px; padding: 22px 18px; text-align: center; box-shadow: 0 2px 14px rgba(194,113,79,0.1); transition: transform 0.25s; }
+.acc-card:hover { transform: translateY(-4px); }
+.acc-card svg { width: 75px; height: 75px; margin: 0 auto 10px; display: block; }
+.acc-title { color: #5B7B6F; font-size: 15px; margin-bottom: 10px; }
+.acc-item { font-size: 12px; color: #3D4E48; padding: 5px 0; border-bottom: 1px solid rgba(180,196,192,0.25); font-family: 'Inter', sans-serif; text-align: left; }
+.acc-why { margin-top: 10px; background: #F0F4F2; border-radius: 8px; padding: 10px; font-size: 11px; color: #5B7B6F; line-height: 1.5; font-style: italic; font-family: 'Inter', sans-serif; text-align: left; }
+
+.season-warm { background: rgba(78,93,86,0.06); border: 1px solid rgba(78,93,86,0.2); border-radius: 16px; padding: 26px; margin-bottom: 26px; }
+.season-cold { background: rgba(47,74,79,0.06); border: 1px solid rgba(47,74,79,0.2); border-radius: 16px; padding: 26px; }
+.season-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+
+.welcome-box { background: rgba(78,93,86,0.05); border: 1px solid rgba(78,93,86,0.2); border-radius: 16px; padding: 42px; margin-bottom: 26px; text-align: center; }
+.cards-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: 26px; }
+.card { background: white; border-radius: 14px; padding: 26px; text-align: center; box-shadow: 0 2px 14px rgba(194,113,79,0.1); border: 1px solid rgba(180,196,192,0.3); }
+.final-banner { background: #5B7B6F; border-radius: 16px; padding: 36px; color: white; text-align: center; margin-top: 22px; }
+.metals-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 14px; }
+.metal-circle { width: 55px; height: 55px; border-radius: 50%; margin: 0 auto 7px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
+@media(max-width:600px){
+ .garment-grid { grid-template-columns: repeat(2,1fr); }
+ .two-cols, .three-cols, .hair-grid, .acc-grid, .cards-3, .palette-grid { grid-template-columns: 1fr; }
+ .palette-grid { grid-template-columns: repeat(4,1fr); }
+}
+
+  /* ── PALETA COMPLETA ── */
+  .colores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .color-item { display: flex; align-items: center; gap: 12px; background: white; border-radius: 10px; padding: 12px; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+  .color-swatch-small { width: 44px; height: 44px; border-radius: 8px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+  .color-info { display: flex; flex-direction: column; gap: 2px; }
+  .color-name { font-size: 12px; font-weight: 600; color: #2F4A4F; font-family: 'Inter', sans-serif; }
+  .color-use { font-size: 10px; color: #6B7C76; font-family: 'Inter', sans-serif; line-height: 1.3; }
+  .color-hex { font-size: 10px; color: #C2714F; font-family: monospace; }
+  .restan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .restan-item { background: white; padding: 14px; border-radius: 10px; border-left: 4px solid #C2714F; }
+  .restan-item strong { font-size: 13px; color: #2F4A4F; display: block; margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+  .restan-item span { font-size: 12px; color: #6B7C76; font-family: 'Inter', sans-serif; }
+
+  /* ── MAQUILLAJE ── */
+  .makeup-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-bottom: 24px; }
+  .makeup-card { background: white; border-radius: 14px; padding: 22px; box-shadow: 0 2px 10px rgba(47,74,79,0.08); }
+  .makeup-title { font-size: 14px; font-weight: 600; color: #5B7B6F; margin-bottom: 14px; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px; }
+  .makeup-swatch-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .makeup-swatch { width: 32px; height: 32px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.2); flex-shrink: 0; }
+
+  /* ── ESTILO PERSONAL ── */
+  .estilo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: 24px; }
+  .estilo-card { background: white; border-radius: 14px; padding: 22px 18px; text-align: center; box-shadow: 0 2px 14px rgba(47,74,79,0.08); border-top: 4px solid #C2714F; }
+  .estilo-title { font-size: 15px; color: #5B7B6F; margin-bottom: 8px; font-weight: 600; font-family: 'Inter', sans-serif; }
+  .estilo-desc { font-size: 12px; color: #3D4E48; line-height: 1.6; font-family: 'Inter', sans-serif; }
+  .estilo-palabras { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; justify-content: center; }
+  .estilo-tag { background: rgba(78,93,86,0.08); border: 1px solid rgba(78,93,86,0.25); border-radius: 20px; padding: 4px 12px; font-size: 10px; color: #5B7B6F; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; }
+
+  @media(max-width:600px){
+    .makeup-grid, .estilo-grid, .restan-grid { grid-template-columns: 1fr; }
+    .colores-grid { grid-template-columns: 1fr; }
+  }
+
+
+  /* ── EDITORIAL QUOTES ── */
+  .editorial-quote {
+    text-align: center;
+    padding: 48px 20px;
+    margin: 8px 0;
+  }
+  .editorial-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #5B7B6F;
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+  .editorial-divider {
+    width: 60px;
+    height: 1px;
+    background: #C2714F;
+    margin: 18px auto 0;
+    opacity: 0.6;
+  }
+
+  /* ── SECTION SUBTITLE ── */
+  .sec-subtitle {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #6B7C76;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  /* ── POIEMAHAUS HEADER ── */
+  .brand-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgba(248,245,241,0.55);
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  /* ── SPACING ── */
+  .sec-intro { margin-bottom: 32px; }
+  .white-card { margin-bottom: 28px; }
+  section { padding-bottom: 20px; }
+
+
+/* ── PALETA SWATCHES ── */
+.palette-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(68px,1fr)); gap:10px; margin:16px 0; }
+.swatch { text-align:center; }
+.swatch-box { width:100%; aspect-ratio:1; border-radius:10px; overflow:hidden; margin-bottom:5px; box-shadow:0 2px 8px rgba(0,0,0,0.12); }
+.swatch-fill { width:100%; height:100%; }
+.swatch-name { font-size:10px; color:#5B7B6F; font-family:'Inter',sans-serif; line-height:1.3; }
+
+/* ── PALETA COMPLETA ── */
+.colores-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; margin:16px 0; }
+.color-item { display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.5); border-radius:10px; padding:10px 14px; }
+.color-swatch-small { width:36px; height:36px; border-radius:8px; flex-shrink:0; box-shadow:0 2px 6px rgba(0,0,0,0.15); }
+.color-info { display:flex; flex-direction:column; gap:2px; }
+.color-name { font-size:13px; font-weight:600; color:#2F4A4F; font-family:'Cormorant Garamond',serif; }
+.color-use { font-size:11px; color:#7A9080; font-family:'Inter',sans-serif; line-height:1.4; }
+.color-hex { font-size:10px; color:#AAB8B4; font-family:'Inter',sans-serif; letter-spacing:1px; }
+.restan-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; margin-top:12px; }
+.restan-item { background:rgba(194,113,79,0.08); border-radius:8px; padding:10px 14px; }
+.restan-item strong { display:block; font-size:13px; color:#C2714F; margin-bottom:3px; }
+.restan-item span { font-size:11px; color:#7A9080; font-family:'Inter',sans-serif; }
+
+/* ── MAQUILLAJE ── */
+.makeup-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; margin:16px 0; }
+.makeup-card { background:rgba(255,255,255,0.5); border-radius:14px; padding:18px; }
+.makeup-title { font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; color:#2F4A4F; margin-bottom:12px; }
+.makeup-swatch-row { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.makeup-swatch { width:32px; height:32px; border-radius:50%; box-shadow:0 2px 6px rgba(0,0,0,0.2); cursor:pointer; }
+.makeup-item { font-size:12px; color:#5B7B6F; font-family:'Inter',sans-serif; padding:3px 0; border-bottom:1px solid rgba(180,196,192,0.3); }
+
+/* ── METALES ── */
+.metals-row { display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-top:12px; }
+.metal-circle { width:52px; height:52px; border-radius:50%; margin:0 auto 6px; box-shadow:0 3px 12px rgba(0,0,0,0.2); }
+
+/* ── SEC SUBTITLE ── */
+.sec-subtitle { font-family:'Inter',sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#9B8E7C; margin-bottom:16px; }
+
+/* ── TIP BOX ── */
+.tip-box { background:rgba(194,113,79,0.08); border-left:3px solid #C2714F; border-radius:0 8px 8px 0; padding:12px 16px; margin-top:12px; font-size:13px; color:#5B5040; font-family:'Inter',sans-serif; line-height:1.6; }
+
+
+/* ── CORTES CON IMAGEN ── */
+.cortes-img-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-bottom:8px; }
+.corte-card-img { background:rgba(255,255,255,0.55); border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(47,74,79,0.08); transition:transform 0.2s; }
+.corte-card-img:hover { transform:translateY(-3px); }
+.corte-img-container { width:100%; aspect-ratio:3/4; background:#EDE8E0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.corte-img { width:100%; height:100%; object-fit:cover; display:block; }
+.corte-img-loader { font-size:12px; color:#9B8E7C; font-family:'Inter',sans-serif; text-align:center; padding:20px; }
+.corte-img-placeholder { text-align:center; color:#9B8E7C; font-family:'Inter',sans-serif; font-size:28px; padding:30px 20px; line-height:1.6; }
+.corte-img-placeholder span { display:block; font-size:12px; margin-top:8px; }
+.corte-card-text { padding:14px 16px; }
+.corte-nombre { font-size:15px; font-weight:600; color:#2F4A4F; font-family:'Cormorant Garamond',serif; margin-bottom:5px; }
+.corte-detalle { font-size:12px; color:#6B7C76; font-family:'Inter',sans-serif; line-height:1.6; }
+
+
+.img-spinner { width:20px;height:20px;border:2px solid #C2714F33;border-top-color:#C2714F;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 8px; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.corte-card-general { background:rgba(194,113,79,0.06); border:1px dashed rgba(194,113,79,0.3); }
+.corte-card-general .corte-nombre { color:#C2714F; }
+
+
+/* ── CORTES INFOGRAPHIC ── */
+.cortes-infographic-wrap {
+  width: 100%;
+  margin: 0 0 28px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(47,74,79,0.12);
+}
+.cortes-infographic {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ══ SECCIÓN NOVIA ══ */
+.novia-hero {
+  text-align: center;
+  padding: 36px 20px 28px;
+  background: linear-gradient(135deg, rgba(194,113,79,0.06), rgba(91,123,111,0.06));
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+.novia-hero-tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #C2714F;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.novia-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #2F4A4F;
+  margin-bottom: 10px;
+}
+.novia-hero-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #7A9080;
+  line-height: 1.7;
+}
+.novia-blanco-block {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(194,113,79,0.25);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 22px;
+}
+.novia-blanco-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #C2714F;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.novia-blanco-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #2F4A4F;
+  margin-bottom: 6px;
+}
+.novia-blanco-evitar {
+  font-size: 12px;
+  color: #C2714F;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 12px;
+}
+.novia-nota {
+  font-size: 13px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  font-style: italic;
+  border-left: 3px solid rgba(194,113,79,0.4);
+  padding-left: 14px;
+}
+.novia-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.novia-swatch { text-align: center; }
+.novia-swatch-color {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.novia-swatch-nombre {
+  font-size: 11px;
+  font-weight: 600;
+  color: #3D4E48;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 2px;
+}
+.novia-swatch-desc {
+  font-size: 10px;
+  color: #7A9080;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+}
+.novia-vestidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.novia-vestido-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(91,123,111,0.15);
+  border-radius: 14px;
+  padding: 20px 18px;
+  position: relative;
+}
+.novia-vestido-num {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #C2714F;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 4px;
+}
+.novia-vestido-emoji {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.novia-vestido-nombre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2F4A4F;
+  margin-bottom: 8px;
+}
+.novia-vestido-desc {
+  font-size: 12px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.novia-vestido-detalles .list-item {
+  font-size: 11px;
+  color: #7A9080;
+}
+.novia-escote-card { border-left: 3px solid #5B7B6F !important; }
+.novia-escote-tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+#btn-novia {
+  background: linear-gradient(135deg, rgba(194,113,79,0.15), rgba(91,123,111,0.1));
+  border: 1px solid rgba(194,113,79,0.4) !important;
+  color: #C2714F !important;
+  font-weight: 600;
+}
+#btn-novia:hover, #btn-novia.active {
+  background: linear-gradient(135deg, rgba(194,113,79,0.3), rgba(91,123,111,0.15)) !important;
+}
+
+
+/* ══ COMBINACIONES DE COLOR ══ */
+.combi-regla-box {
+  background: linear-gradient(135deg, rgba(91,123,111,0.08), rgba(194,113,79,0.06));
+  border: 1px solid rgba(91,123,111,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+.combi-regla-tag {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #9B8E7C;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 6px;
+}
+.combi-regla-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: #2F4A4F;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.combi-regla-logica {
+  font-size: 13px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+.combi-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(91,123,111,0.12);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.combi-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-left: 14px;
+  margin-bottom: 14px;
+}
+.combi-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  min-width: 36px;
+}
+.combi-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #2F4A4F;
+  margin-bottom: 2px;
+}
+.combi-subtitulo {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #9B8E7C;
+  font-family: 'Inter', sans-serif;
+}
+.combi-descripcion {
+  font-size: 13px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.combi-visual-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.combi-outfit {
+  text-align: center;
+  flex-shrink: 0;
+}
+.combi-svg {
+  width: 90px;
+  height: 144px;
+  filter: drop-shadow(0 4px 12px rgba(47,74,79,0.15));
+}
+.combi-outfit-label {
+  font-size: 10px;
+  color: #9B8E7C;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.combi-swatches {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex: 1;
+}
+.combi-swatch-item {
+  text-align: center;
+  min-width: 60px;
+}
+.combi-swatch-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin: 0 auto 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.combi-swatch-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9B8E7C;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 2px;
+}
+.combi-swatch-name {
+  font-size: 11px;
+  color: #3D4E48;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.combi-nota {
+  font-size: 12px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  border-top: 1px solid rgba(91,123,111,0.15);
+  padding-top: 14px;
+  line-height: 1.6;
+}
+
+
+/* ── NOVIA INFOGRAPHIC ── */
+.novia-infographic-wrap {
+  width: 100%;
+  margin: 0 0 24px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(47,74,79,0.14);
+}
+.novia-infographic {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* ── NOVIA TIPS GRID ── */
+.novia-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.novia-tip-card {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(91,123,111,0.12);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+.novia-tip-icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.novia-tip-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2F4A4F;
+  margin-bottom: 6px;
+}
+.novia-tip-texto {
+  font-size: 11px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.65;
+}
+
+
+/* ── NOVIA VESTIDOS ELEGANTES ── */
+.novia-vestidos-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #2F4A4F;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 22px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(91,123,111,0.15);
+}
+.novia-vestidos-elegantes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(194,113,79,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.nvest-col {
+  padding: 22px 20px;
+  border-right: 1px solid rgba(194,113,79,0.12);
+}
+.nvest-col:last-child {
+  border-right: none;
+}
+.nvest-header {
+  margin-bottom: 12px;
+}
+.nvest-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #C2714F;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.nvest-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2F4A4F;
+  line-height: 1.3;
+}
+.nvest-divider {
+  width: 32px;
+  height: 1px;
+  background: #C2714F;
+  margin: 10px 0 14px;
+  opacity: 0.5;
+}
+.nvest-section-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9B8E7C;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.nvest-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nvest-bullet {
+  font-size: 11px;
+  color: #3D4E48;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.55;
+}
+.nvest-detalle {
+  font-size: 11px;
+  color: #5B7B6F;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.55;
+}
+.nvest-color-ideal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nvest-color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.nvest-color-name {
+  font-size: 11px;
+  color: #3D4E48;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 600px) {
+  .novia-vestidos-elegantes {
+    grid-template-columns: 1fr;
+  }
+  .nvest-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(194,113,79,0.12);
+  }
+  .nvest-col:last-child { border-bottom: none; }
+}
+
