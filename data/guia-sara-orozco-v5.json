@@ -1,0 +1,190 @@
+{
+  "ui": {
+    "frase_label": "Your Style Concept",
+    "teVeo_label": "I See You",
+    "estiloHoy_label": "Your Style Today",
+    "estiloIdeal_label": "Your Ideal Style",
+    "brecha_label": "The Gap",
+    "nombreEstilo_label": "Your Style Has a Name",
+    "segundaOpcion_label": "A Second Direction",
+    "guiaCompras_label": "Your Shopping Guide",
+    "telas_label": "Fabrics",
+    "prendas_label": "Key Pieces",
+    "zapatos_label": "Shoes",
+    "bolsos_label": "Bags",
+    "accesorios_label": "Accessories",
+    "empiezaAqui_label": "Start Here",
+    "outfits_label": "Your Outfits",
+    "imagenYExito_label": "Your Image and Your Success",
+    "tensiones_label": "Finding Your Balance",
+    "mantra_label": "Your Mantra"
+  },
+  "frase": "Polished Strength, Effortless Every Day",
+  "teVeo": {
+    "parrafos": [
+      "Sara, before we talk about anything else — I want you to know I read every word you wrote, and what I found was someone who is remarkably clear about who she is. You know you're a strong, athletic woman. You know you want to feel powerful and chic. You know that when someone says 'you look great,' something clicked — and you pay attention to that. That instinct is one of your most valuable assets, and this guide is built to help you trust it more.",
+      "You said it clearly: you feel like you've evolved and your clothes haven't. The woman you've become wants to walk into a room and feel powerful, confident, and chic — without sacrificing an ounce of comfort. Those two things aren't in conflict. They just haven't been introduced to each other yet. That's exactly what this guide is for."
+    ],
+    "cita": "'Nothing feels like me. I can't find my style.' — That's not a taste problem, Sara. You have great instincts. What you've been missing is the specific direction for your body, your coloring, and your life. That direction starts here."
+  },
+  "estiloHoyIdeal": {
+    "hoy": {
+      "titulo": "Minimal, Basic, Comfortable — Playing It Safe",
+      "puntos": [
+        "You prioritize comfort first, looking put-together second, looking feminine third — in that order, every morning.",
+        "You reach for dresses, shirts, and flats most often. You actively avoid prints, very fitted cuts, and anything revealing. Tops have been a particular challenge — not because of your taste, but because standard cuts don't account for your shape.",
+        "The result is a wardrobe that functions but stays invisible — it doesn't yet reflect the powerful, sophisticated woman you described. Not because she doesn't exist, but because her clothes haven't caught up yet."
+      ]
+    },
+    "ideal": {
+      "titulo": "Powerful, Confident, Chic — With Room to Breathe",
+      "puntos": [
+        "You want to walk into any room and feel immediately confident and put-together without overthinking it — whether it's a Monday meeting or a weekend errand.",
+        "You want your image to communicate confidence, quiet luxury, and approachability — authority that feels warm, never cold or unapproachable.",
+        "Your Pinterest saves tell the same story: elegant, fashion-forward, modern classic. Clean lines, real structure, intentional color. Not loud — just deliberate.",
+        "And underneath all of it, you want your image to always reflect your strength: 'a strong athletic woman who can dress well.' That identity belongs in your wardrobe, not just in your training."
+      ]
+    },
+    "brecha": "Your gap isn't about taste — you have excellent taste. It's about two things: fit knowledge and direction. You've been using 'minimal' as a substitute for 'elegant,' but for a Bright Winter with a Soft Hourglass shape, true elegance means clarity, contrast, and pieces that work with your curves instead of working around them. The good news: once you know what to look for, this gap closes fast.",
+    "citaAspiracional": "'I want to show I am able to dress myself in any sort of setting — whether it's laid back or when I need to dress up professionally.' That range — from confident casual to undeniably polished — is exactly what this guide gives you. Not two separate wardrobes. One intentional one.",
+    "nombreEstilo": "Crisp Quiet Luxury",
+    "descripcionEstilo": "Crisp Quiet Luxury is quiet luxury built for a Bright Winter palette — which means it reads cleaner, sharper, and more graphic than the soft, muted, beige-heavy version most people picture. Think high contrast (true black, crisp white, ink navy), occasional saturated jewel tones, and silhouettes that follow your natural shape. Understated but never flat. Polished but never stiff. This is where 'minimal' and 'elegant' finally meet.",
+    "referentesDiaADia": [
+      "Search bright winter capsule wardrobe or bright winter outfit ideas — this shows you how women with your same coloring put looks together, so you can see the direction in real outfits rather than just swatches.",
+      "Search modern classic style women or sculptural minimalist outfits — this is where minimal stops reading as basic and starts reading as intentional and polished.",
+      "Search quiet luxury high contrast — for the crisper, more structured version of quiet luxury that works for your coloring, versus the muted warm-toned versions that work against it.",
+      "Search polished professional hourglass style or wrap dress office outfit — for silhouette ideas built for your shape, showing exactly how structure and curves work beautifully together."
+    ],
+    "advertenciaBusqueda": "Avoid searching boho, warm neutral capsule, earthy minimalist, or soft autumn style — those pull toward muted, warm palettes that work against your coloring. Also skip boxy blazers, straight tunics, and heavily layered looks — they hide the waist definition that is your strongest style asset.",
+    "segundaOpcion": {
+      "nombre": "Elevated Athletic Ease",
+      "intro": "Your style doesn't have to live in one lane. This second direction is built around the part of you that wants your strength to always show — more movement-ready than Crisp Quiet Luxury, but still deliberate and put-together. This is your weekend and active-day mode.",
+      "caracteristicas": [
+        "Clean, shaped athletic-inspired pieces — rib-knit tops that follow your curves without squeezing, tailored joggers with a real waistband, fitted layers with intention",
+        "Monochrome or two-tone looks in your Bright Winter palette — full black, crisp white, or one saturated color — rather than busy prints or heavy branding",
+        "Sculptural, minimal outerwear — a fitted zip-up or bomber in a solid jewel tone or classic black, not a shapeless hoodie",
+        "Clean, polished sneakers as the anchor — kept fresh and minimal, low on visible branding"
+      ],
+      "dondeBuscar": [
+        "Search 'elevated athleisure' or 'luxury sporty style women' for the visual direction.",
+        "Visual references: Hailey Bieber's off-duty looks or Naomi Osaka's press-day style — sporty but never sloppy, always intentional.",
+        "This direction is best for weekends, active days, and errands — your Crisp Quiet Luxury is what carries you when authority and polish matter most."
+      ],
+      "diferenciaPractica": "Crisp Quiet Luxury is your power mode — for work and anywhere you want to be read as confident and in charge. Elevated Athletic Ease is your energy mode — for weekends and movement. Same woman, two settings."
+    }
+  },
+  "guiaCompras": {
+    "intro": "Your practical shopping reference — built around your Bright Winter coloring, your Soft Hourglass shape, and your real week: office days where you want to feel polished and powerful, and weekends where comfort and looking good coexist.",
+    "telasIntro": "You mentioned that tops don't fit well — and this is one of the most common challenges for a Soft Hourglass. The issue isn't your body. It's that most tops are cut for straighter proportions, so when a fabric has no give and no shaping, it either pulls at the bust or boxes in the waist. The fix isn't just 'get stretch fabrics' — it's knowing which types of fabric and cut actually work with your shape.",
+    "telasSi": [
+      "Jerseys and fine knits: follow your curves naturally without adding bulk. Your most reliable everyday fabric — works in tops, dresses, and even blazers when structured well.",
+      "Silk, chiffon, and fluid viscosa: drape beautifully over curves without clinging. Elegant and effortless for both office and social occasions.",
+      "Relaxed wool crepe and ponte: medium weight with enough structure to look polished but enough softness to move with you. Great for tailored pieces that still feel comfortable all day.",
+      "Cotton and linen cut on the bias: when cut diagonally across the grain, these natural fabrics gain movement and curve-friendliness — a great option when you want breathable, natural fabrics that still flatter."
+    ],
+    "telasNo": [
+      "Heavy, stiff wovens with no stretch or bias cut: the main culprit behind tops that don't fit — they have no give to accommodate your bust and waist at the same time, so something always pulls or gaps.",
+      "Crisp, structured fabrics like canvas or thick gabardine: add unwanted bulk and volume rather than following your shape.",
+      "Sheer or very flimsy fabrics without lining or structure: lose their shape quickly and read as casual rather than the polished look you're after."
+    ],
+    "prendasClave": [
+      "Wrap tops and wrap dresses: the single most flattering silhouette for your shape — they adjust to your proportions automatically, define the waist without needing stretch, and work for both office and weekends. This directly solves your top fit problem.",
+      "Crossover or V-neck shaped tops in soft fabric: same principle as the wrap — they accommodate your bust and define your waist without a single button or zipper to fight with.",
+      "Plain-fronted trousers with a side zip and real waistband (not elastic): cleaner through the hip and waist than front-zip trousers, and the structured waistband sits smoothly rather than adding bulk.",
+      "Fitted blazer with waist definition — shaped, not boxy: a shawl collar or single-breasted style in a soft fabric. Look for one with a seam or dart at the waist rather than a straight cut — this is what makes the difference between looking polished and looking boxed in."
+    ],
+    "zapatos": {
+      "diaADia": "A clean leather flat or low block heel in black or cool-toned nude for office days — polished enough to match the look you're building, comfortable enough for a full day. Both read as intentional rather than afterthought.",
+      "salidasEspeciales": "A simple strappy sandal in black or cool metallic silver for weekend outings — elegant with ease. For days when you want more presence, a pointed-toe kitten heel in black or a jewel tone elongates the line and signals deliberateness from across the room."
+    },
+    "bolsos": "A structured tote in black, crisp white, or one saturated color for office days — your clearest quiet-luxury signal and the fastest way to elevate any outfit. A sleek crossbody or shoulder bag in smooth leather for weekends. Avoid heavy logos and busy textures — they compete with the high-contrast clarity that flatters your coloring most.",
+    "accesorios": {
+      "intro": "You're drawn to texture and structure visually — which tells me your accessories should be intentional and architectural rather than decorative or delicate. Fewer, sharper pieces will always outperform more, softer ones for your aesthetic.",
+      "items": [
+        "Sculptural earrings in polished silver or white gold — geometric shapes, hoops with weight, or clean bar styles. Cool-toned metals harmonize with your Bright Winter coloring far better than warm gold.",
+        "One statement ring or clean cuff rather than several stacked delicate pieces — matches your 'clean and structured' visual instinct and reads as confident.",
+        "A thin belt in black or cool-toned cognac at the natural waist: one of the highest-impact styling moves for your shape. Worn over a wrap dress or belted blazer, it brings your waist into focus and sharpens the entire look.",
+        "A fitted, shaped blazer or jacket as your everyday transition piece — this is the accessory that shifts any outfit from casual to intentional the moment you put it on."
+      ]
+    },
+    "empiezaAqui": {
+      "intro": "Before you shop for a single new thing — start with these three moves:",
+      "pasos": [
+        "CLOSET FIRST: Pull everything out and sort by color. Set aside anything in warm beige, camel, muted olive, or warm brown — those shades tend to work against your Bright Winter coloring and may be part of why some outfits never feel quite right on you. For pieces in those colors that you love and feel great in, absolutely keep them. For the ones you rarely reach for, consider donating or selling. What remains in your palette — true black, white, navy, jewel tones — is your starting point.",
+        "COLOR NEXT: When you find a piece you love, take it to a window or good light and hold it next to the color palette on your results page. You are not looking for an exact match — you are checking whether the color of that piece feels like it belongs in the same family as your palette. Does it harmonize or does it clash? That one check will save you from buying things that never quite work once you get them home.",
+        "SHOP WITH A SILHOUETTE IN MIND: Before your next top or dress purchase, look for wrap or crossover styles first. Try one before going back to your usual cuts. The wrap silhouette is designed to adjust to your proportions naturally — it's one of the reasons some outfits earn compliments and others don't, and it opens up far more options than you might expect."
+      ],
+      "nota": "Three moves — and the next time you get dressed and someone says 'you look great,' you'll know exactly why."
+    }
+  },
+  "outfits": {
+    "intro": "Three complete looks for your real week — office days where you want to feel polished and powerful, and weekends where 'casual but not sloppy' is the goal.",
+    "lista": [
+      {
+        "contexto": "Office — polished and powerful",
+        "subtitulo": "confident, chic — the woman who just walked in and the room noticed",
+        "prendas": "Wrap dress or shaped sheath dress in jersey or ponte + fitted shawl-collar blazer",
+        "colores": "Rich jewel tones from your palette for the dress · Black or crisp white for the blazer · Or high contrast black and white for maximum impact — always with one piece darker than the other, never both white head to toe",
+        "zapatos": "Clean leather flat or low block heel in black",
+        "detalle": "Sculptural silver earrings + thin belt at the natural waist if the dress doesn't define it already — this combination signals authority clearly and immediately"
+      },
+      {
+        "contexto": "Office — everyday comfortable and put-together",
+        "subtitulo": "polished through every meeting, comfortable all day",
+        "prendas": "Plain-fronted trousers with side zip in black or ink navy + crossover or V-neck top in soft fabric tucked in, or a wrap blouse",
+        "colores": "Dark trousers (black or navy) · Top in a color from your palette or crisp white — always keep the contrast between top and bottom",
+        "zapatos": "Pointed-toe kitten heel or clean leather flat in black",
+        "detalle": "One geometric silver earring and a thin belt — keeps the look sharp and defined without adding complexity"
+      },
+      {
+        "contexto": "Weekend — casual with intention",
+        "subtitulo": "comfortable, put-together, effortlessly you",
+        "prendas": "Fitted rib-knit top in a solid color from your palette OR a crisp white top + straight-leg jeans in black or dark wash OR tailored joggers with a real waistband",
+        "colores": "A color from your palette on top · Black or dark navy on the bottom — high contrast reads as polished even on casual days. Avoid all-white head to toe as it can visually amplify rather than define your shape",
+        "zapatos": "Clean white or black sneakers with minimal branding, or a simple strappy sandal",
+        "detalle": "A structured crossbody bag + one piece of cool-toned jewelry — the accessories are what separate 'casual' from 'Elevated Athletic Ease'"
+      }
+    ]
+  },
+  "imagenYExito": {
+    "intro": "There is a concept called enclothed cognition — the science of how what you wear changes how you think, how you move, and how the world responds to you. It is not a theory. It has been proven in research. And it is exactly why this guide matters beyond just looking good. What you wear changes how you feel, and how you feel changes everything else — the way you carry yourself, the first impression you make, the confidence you bring into a room before you say a word. You said you want to show you can dress for any setting, laid back or professional. That is not just a style goal. It is about being seen clearly and taken seriously, everywhere you go.",
+    "cita": "'I want to show I am able to dress myself in any sort of setting — whether it's laid back but also when I need to dress up professionally for work.'",
+    "practica": [
+      {
+        "num": "1",
+        "titulo": "Color is your fastest authority signal",
+        "texto": "For your coloring, a flat neutral outfit can accidentally read as safe rather than in charge. One rich, saturated color from your palette — or a clean high-contrast combination — communicates confidence and intention the moment you walk in. Check your palette page to see which tones land in that saturated, high-contrast territory. That is your highest-return single change."
+      },
+      {
+        "num": "2",
+        "titulo": "Your waist is your visual advantage — use it",
+        "texto": "A defined waist communicates presence and confidence in a way no amount of styling tricks can replicate. For your Soft Hourglass shape, this is your natural strength. A wrap silhouette, a belt, or a blazer with waist shaping activates it immediately — and it's why some outfits earn compliments while others don't."
+      },
+      {
+        "num": "3",
+        "titulo": "Trust your compliment instinct — it's real data",
+        "texto": "You told us: 'When people notice I look good and make the comment, I take note.' That feedback loop is one of the most accurate style tools you have. When something earns a compliment, remember what you wore — the color, the silhouette, the fit. Over time, that list becomes your personal formula, more reliable than any trend."
+      }
+    ],
+    "tensiones": {
+      "descripcion": "You want to feel powerful and polished at work — and you also want to feel genuinely comfortable and casual on weekends without looking like you stopped trying. Those aren't in conflict. They just need different expressions of the same woman.",
+      "label_lado_a": "Authority",
+      "label_lado_b": "Ease",
+      "lado_a": [
+        "One saturated jewel tone or high-contrast black and white close to your face",
+        "A shaped, waist-defined blazer or structured dress — never boxy or straight",
+        "One deliberate, sculptural accessory that reads as intentional",
+        "A polished shoe — even a flat reads as professional when the outfit has structure"
+      ],
+      "lado_b": [
+        "Fabrics with natural drape or gentle stretch — comfort is never sacrificed for the look",
+        "Wrap and crossover silhouettes — adjustable, comfortable, and always flattering",
+        "Monochrome color — the easiest way to look pulled-together with minimum effort",
+        "Clean sneakers or simple sandals that stay polished without trying"
+      ]
+    },
+    "formula": "Defined waist + one saturated color + one deliberate accessory = confident, approachable, polished. Every time."
+  },
+  "mantra": "You already know when something is working — you feel it before anyone says a word. Trust that.",
+  "firma": "With love, Claudia · Poiema Haus"
+}
