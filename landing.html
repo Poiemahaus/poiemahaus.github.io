@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poiema Haus · Análisis de Imagen Personal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+:root {
+  --cream: #F0EDE6;
+  --sand: #E4DDD0;
+  --teal: #2C6E7C;
+  --teal-mid: #3A8899;
+  --terra: #C4714A;
+  --brown: #1E5060;
+  --dark: #183C48;
+  --text: #1B3A44;
+  --muted: #537A85;
+  --soft: #F5F2EC;
+  --green-ok: #6A9EA8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+/* Hidden language content */
+.es { display: block; }
+.en { display: none; }
+span.es, a.es, button.es { display: inline; }
+span.en, a.en, button.en { display: none; }
+
+/* LANGUAGE TOGGLE */
+.lang-bar {
+  background: var(--dark);
+  border-bottom: 2px solid var(--teal);
+  display: flex; justify-content: flex-end; align-items: center;
+  padding: 8px 20px; gap: 6px;
+}
+.lang-btn {
+  border: 1px solid rgba(44,110,124,0.5); background: transparent;
+  color: rgba(245,240,232,0.65); border-radius: 20px;
+  padding: 5px 14px; font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; cursor: pointer; font-family: 'Jost', sans-serif;
+  transition: all 0.2s;
+}
+.lang-btn.active { background: var(--teal); border-color: var(--teal); color: #F5F0E8; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(160deg, var(--dark) 0%, #204E5E 55%, #2C6E7C 100%);
+  padding: 64px 24px 56px; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -60px; right: -60px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(196,113,74,0.15) 0%, transparent 70%); border-radius: 50%;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -50px; left: -50px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(44,110,124,0.2) 0%, transparent 70%); border-radius: 50%;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+.logo-wrap { display: flex; flex-direction: column; align-items: center; margin-bottom: 30px; animation: fadeDown 0.7s ease both; }
+.logo-img { width: 74px; height: 74px; margin-bottom: 10px; overflow: hidden; border-radius: 4px; }
+.logo-img img { width: 100%; height: 100%; object-fit: contain; }
+.logo-poiema { font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 500; color: #F5F0E8; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 6px; }
+.logo-line { width: 40px; height: 1px; background: var(--terra); margin-bottom: 6px; }
+.logo-haus { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 400; color: rgba(245,240,232,0.85); letter-spacing: 6px; text-transform: uppercase; }
+
+.hero-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(196,113,74,0.95); margin-bottom: 16px; animation: fadeDown 0.7s ease 0.1s both; }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: #F5F0E8; line-height: 1.15; margin-bottom: 16px; animation: fadeDown 0.7s ease 0.15s both; }
+.hero-title em { color: var(--terra); font-style: italic; }
+.hero-sub { max-width: 480px; margin: 0 auto 32px; font-size: 15px; color: rgba(245,240,232,0.82); line-height: 1.8; animation: fadeUp 0.7s ease 0.25s both; }
+
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* CTA BUTTON */
+.cta-btn { display: inline-block; background: var(--terra); color: white; text-decoration: none; padding: 16px 38px; border-radius: 30px; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 0 8px 24px rgba(196,113,74,0.4); transition: transform 0.2s, box-shadow 0.2s; animation: fadeUp 0.7s ease 0.35s both; }
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(196,113,74,0.5); }
+.cta-note { margin-top: 14px; font-size: 11px; color: rgba(245,240,232,0.55); letter-spacing: 0.5px; animation: fadeUp 0.7s ease 0.4s both; }
+
+/* CONTENT */
+.content { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 64px 0; }
+.section-alt { background: var(--soft); }
+.sec-head { text-align: center; margin-bottom: 36px; }
+.sec-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.sec-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--brown); line-height: 1.2; }
+.sec-line { width: 48px; height: 2px; background: var(--terra); margin: 16px auto 0; opacity: 0.7; }
+
+/* EDITORIAL QUOTE */
+.editorial-quote { text-align: center; padding: 8px 12px; }
+.editorial-quote p { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--brown); line-height: 1.7; max-width: 540px; margin: 0 auto; font-style: italic; }
+.editorial-quote .signature { margin-top: 20px; font-family: 'Jost', sans-serif; font-size: 12px; color: var(--muted); letter-spacing: 1px; font-style: normal; }
+
+/* SERVICE CARDS */
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 8px; }
+.service-card { background: white; border-radius: 14px; padding: 26px 20px; box-shadow: 0 2px 16px rgba(24,60,72,0.08); border: 1px solid rgba(44,110,124,0.1); }
+.service-card.wide { grid-column: 1 / -1; }
+.service-card.bridal { background: linear-gradient(135deg, var(--dark), #204E5E); border: none; }
+.service-icon { font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.service-card.bridal .service-icon { color: var(--terra); }
+.service-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--brown); margin-bottom: 8px; }
+.service-card.bridal .service-title { color: #F5F0E8; }
+.service-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.service-card.bridal .service-desc { color: rgba(245,240,232,0.75); }
+
+/* DIFFERENTIATOR / CARRY WITH YOU */
+.carry-box { background: linear-gradient(135deg, var(--dark), #204E5E); border-radius: 20px; padding: 40px 30px; text-align: center; color: #F5F0E8; }
+.carry-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; margin-bottom: 16px; }
+.carry-desc { font-size: 14px; line-height: 1.8; color: rgba(245,240,232,0.85); max-width: 480px; margin: 0 auto; }
+.carry-chips { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+.carry-chip { background: rgba(196,113,74,0.18); border: 1px solid rgba(196,113,74,0.5); border-radius: 20px; padding: 7px 16px; font-size: 11px; letter-spacing: 1px; color: #F0C4A8; text-transform: uppercase; }
+
+/* FOUNDER ACCESS */
+.founder-box { background: var(--teal); border-radius: 20px; padding: 42px 32px; text-align: center; color: white; position: relative; overflow: hidden; }
+.founder-box::before { content: '✦'; position: absolute; top: 20px; right: 28px; font-size: 20px; color: rgba(255,255,255,0.25); }
+.founder-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(245,240,232,0.75); margin-bottom: 12px; }
+.founder-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; margin-bottom: 16px; }
+.founder-desc { font-size: 14px; line-height: 1.8; color: rgba(245,240,232,0.92); max-width: 480px; margin: 0 auto 18px; }
+.founder-note { font-size: 12px; font-style: italic; color: rgba(245,240,232,0.7); }
+
+/* PROCESS STEPS */
+.process-list { display: flex; flex-direction: column; gap: 14px; }
+.process-step { background: white; border-radius: 14px; padding: 20px; display: flex; align-items: flex-start; gap: 16px; border: 1px solid rgba(44,110,124,0.12); box-shadow: 0 2px 12px rgba(24,60,72,0.06); }
+.process-num { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--teal), var(--dark)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: white; }
+.process-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--brown); margin-bottom: 4px; }
+.process-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+/* FINAL CTA */
+.final-cta { background: linear-gradient(160deg, var(--dark) 0%, #204E5E 100%); border-radius: 24px; padding: 52px 30px; text-align: center; color: #F5F0E8; }
+.final-cta-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; margin-bottom: 14px; }
+.final-cta-desc { font-size: 14px; color: rgba(245,240,232,0.8); margin-bottom: 28px; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 36px 20px 44px; }
+.footer-name { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--brown); }
+.footer-role { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+@media (max-width: 560px) {
+  .hero-title { font-size: 32px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .section { padding: 48px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
+  <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="logo-wrap">
+      <div class="logo-img"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAABCKADAAQAAAABAAAA3gAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/8AAEQgA3gEIAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMAAQEBAQEBAgEBAgMCAgIDBAMDAwMEBgQEBAQEBgcGBgYGBgYHBwcHBwcHBwgICAgICAkJCQkJCwsLCwsLCwsLC//bAEMBAgICAwMDBQMDBQsIBggLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLC//dAAQAEf/aAAwDAQACEQMRAD8A/rK/4KKfte6l+wt+yzq37RuleHYfFMum6hpll/Z8901kjjULhIC3mrHKQU37sbDnGOK/nwb/AIOf/HvOz4J6WB7+IJz/AO2Qr9S/+DgQt/w7G8V9v+J74c/9OMNfwM5J613YHDQnS55LW54GcY+vRxHJTnZWP6lv+In3x+evwU0r/wAH85/9s6lX/g578fjk/BXS/wDwfz//ACHX8slKGI6V1/U6X8h5X9rYpfb/AC/yP6nT/wAHPnj09fgppf8A4UE//wAh1E3/AAc9/EIfc+Culfjr9x/8h1/LSrGkLFqPqlL+UP7YxX/Pz8Ef1Kr/AMHP3xB/i+Cmlfhr8/8A8h05v+Dn/wAfLyPgrpf/AIUE/wD8h1/LNTWOBR9Uo/yi/tjF/wA/4I/qZ/4igfHpHHwT0z/woJ//AJDqP/iJ++IR6fBTSvx1+f8A+Q6/llyfWjc1NYSj/INZviv5/wAj+pr/AIiffiHnn4KaT+Gv3H/yHSH/AIOf/iEvT4KaV/4P7j/5DNfyzZamsTjNL6nS/kH/AGviv5/wR/UpJ/wdAfEhvufBTSB9deuD/wC2goj/AODn34lkfN8FtIP0164/+RK/lnXJapgSOlH1Sj/KH9rYv/n5+CP6mx/wc+/EI/e+Culf+D+4/wDkSl/4ifPiF2+Culf+D+4/+Q6/loVt1NLkHFP6nR/lF/a2L/5+f19x/UwP+Dn34gf9EU0r/wAH0/8A8h03/iJ8+IY+78FdKH/cen/+Q6/lnDkUM570vqdH+UP7Xxf/AD8/L/I/qaH/AAc//EAjH/ClNK/8H0//AMh1Mv8Awc/eP8f8kU0r8Nen/wDkSv5W1bNPyaPqlL+UP7XxXSf5f5H9Tzf8HP3xCx8nwV0sH316f/5EqEf8HPnxHz83wV0g/wDceuP/AJDr+WfJqYdKPqlH+UP7Xxf/AD8f3I/qXP8Awc9/EEf80V0r/wAH9x/8h03/AIie/iI33fgppX/g/uP/AJEr+WulyR0o+q0f5QWb4v8A5+fgj+pb/iJ4+If/AERXSf8AwfXH/wAiU0/8HPHxHzx8FtJx/wBh64/+RK/lwUkjJp1L6pR/lD+18X/P+CP6kk/4OePiEeG+C+l/hr1x/wDIlTj/AIOdfH/b4LaWf+49P/8AIlfyzAkdKdvb6/5+lP6pR/lD+18V/P8Akf1Mj/g538eY+b4K6YP+4/OP/bOmH/g53+IH8HwV0r8dfn/+Q6/lqVyTjH+fyqQnHSn9So/yh/a+L/5+fgj+pVf+Dnfx2R+8+Cumfh4gn/8AkOq11/wc+eN4lyPgrp2O+PEE3P8A5J1/Lh5nFZt+7GMgdaPqVH+UP7Xxf/Pz8Ef6Zf7AX7U1/wDtq/si+EP2n9T0SLw5P4oF6W06G4a6SE2d3Na8SsiM27yt3KjGcdq+xvMb/P8A+qvyJ/4IQZ/4dP8AwpDdv7b/APTreV+udfP142qSS7n3GEquVGEpPVpH/9D+gL/g4JfZ/wAExfFR/wCo54c/9OEVfwMJINvNf3wf8HCGT/wTF8UY7674c/8AThFX8DMf3a9bLf4HzPlc+/3n5FoEHpS0xOlSBSa7jxQBHcUlFFAWEJI6DNQE9zUrk44qu54xRYhoXcvTNIWI7UyNXkmSCJS8krLGijqzuQqgepJIA9zX2B/w77/by3Mq/BPxySpKtjQ7n7w4I+5zSckt2VGnKSvFNnyGGz1qP5unWvsuL/gnf+37MB5XwQ8cnProtwP5qK0E/wCCa/8AwUMuE3RfA7xsfrpTr/6ERU+0h/Milh6m3I/uPiZeOtLuJPHNfd9p/wAEsv8AgpNdkG1+B3i0E/37aGP/ANDmWtqP/gkn/wAFOZ+F+CPiQZ/vNZL/ADuqTq0/5kX9WrfyP7j8+RnsDQTzg1+l2n/8Eaf+Cod4Ny/BnVYh/wBNb3TYv/QrwV1lt/wQ/wD+CpN04Q/CpoAevnazpSY+uLoml7akl8a+8f1Sv/I/uZ+UYbOaiZs8mv1vm/4IW/8ABUlIi6/De2kK87E17TCx+mbgVwWt/wDBGv8A4Ki6DGZrj4M6vOg5/wBEvdNuT+Ud2SfypfWKX8y+8p4Gut4P7mfmXuGM9KlUnBPWvozx3+xh+2R8MfNk+Ifwl8ZaTFD9+WbRLp4V9/NijePHvuxXzSlzCLtrF2VbhDhomO2QH0KHDD8RWinGWzMpUpR+JF0H1qdMAGoN4HGcZqQYAwOtU1Yla7EpOBz2pMg1FuOM0o9cZosQ3qWkORin1Cmc5zxU4xtzSsh7iUmT0xS4x+NGaLIdhynBznFLvweBTByM0U7EvcYz4OKz7jMi4FXH45NZ8zhRk9uaAuf6F/8AwQqjEf8AwSm+FA9V1k/nqt5X625SvyU/4IVsJP8AglP8JyOyayD9Rqt5X624WvmcRpVl6s/Q8J/Ap+i/I//R/fr/AIOEeP8AgmL4oI/6D3hz/wBL4q/gXifKgV/fZ/wcGjd/wTD8VN6a74cP/lQir+BCIEAA162W/wAD5nyuff7z8v8AMupViPvVZBk5qyneu48UaRyTUeMHgdanZgOlQkkdBS6k8xG554qtIoI9M1NUbEZ5piWrIxw6t/cZXHsyEMpHuCAR7iv2i/Z3/wCC9H/BQD4Ma5aH4l63b/FLQEZRc6frsEMF40efm8i+to43SQj7pmSVM8Ed6/GHap6VBIQBg9KyqUo1NJHRRrzpO8Gf6hP7L/7RHw1/ay+Bnh39oP4RXEk+heI7YzRpMNk9vNGxjmt51BIWaCVWjkAJGV+UlcE+/wCwd6/nH/4NlfE2r6n+x74/8LX777TR/Grva852/bLG2llGOwLgtgd2P1r+j/Zn618liqXs6rgj9BwVb21CM2tSHYmS23n/AD9KXanpx3FPZcYptYK516Hwp+3n+1745/YY+GVr+0QngaTxz4C0qYReK00y4WLV9NgmZUhvoI5cQTwRuSk6M0boGVwxUPW1+yH/AMFBP2Tv269Cm1b9nPxTFqN9YRiTUNEu1Npq9gDxm4tZD5gTPAlTfCezmvrbxT4Y8N+NvDGpeC/GFjHqekazaTWN9ZzDdFc2twhjmicHqroSpHofxr/M3/av+APxW/4Jq/tu6z8OvAmuahoeteBr5b7wr4htHMd22l3QL2Uu/o+6I+TOjBo3ZHR1YcV6WEw1PERcNpI8jMMZUws4zteDP9N7HGCPzqPYh/hH4ivx3/4JC/8ABUTT/wDgoN8LLvw18REttK+KfhGKP+27O3Hl29/bOdiahaKeRG7fLLFkmGXjOx4yf2JAzgVwVac6U+WR6FGtCrFVIbMsQvLEuYXKfQkZ/WvDvjL+zD+zn+0Vpj6V8d/Aug+LonXbu1SwhnlX3WUqJUPujgj1r3EccUv0qY1ZJ3TsXKnGXxI/nk/aS/4NyP2SPiSk2rfs36xqnwy1NgdtqWbWNJdsHgwzuLiME/8APO4wP7hr+af9s3/gl9+2J+w5DP4i+LXh9dV8JRNx4n0NmvNLVT0M/wAomtCemZ0VM8B2Nf6OfTHNMmhgvLeW0vFWSKdGjkRgGVlbgqyn5SCOoIIPcV6OHzOrCylqeViskw9W7irPyP8AJ/Lg4Y9COuR0/wA9+9PXdnA4r+vT/gqJ/wAEFvDPiPSNQ+Pn7AukxaRrsPmXOo+CrbEdjfqcsz6YpIW2uByfswxBL0QRP97+RKS2ntJpLS8he3lhkeKSKVGjkjkjYq6SIwDI6sCrKwDKwIIBFfQYfEQqxvA+RxmCnh58s9ug9QD1qYYz83Sq67cc0/cCOa3uctiUHcM5o5xTFKngUA5+6KBMeSAvWmsw/KmMeSDTOSM0C3GOSBmsm7PyHHetNxnpWReHahoFY/0M/wDgg82f+CUXwqJ9dc/9O15X6771r8g/+CDx/wCNUXwqz663/wCnW7r9dq+WxX8WXqfo2C/3en6I/9L+gD/g4Nwv/BMLxT/2HfDn/pwir+BJFzye39K/vw/4ODIjJ/wTC8VAdtb8On/yoRV/Aqgbqtetlv8AAPlM+/3n5f5j4+9TDb3qIjPXmlX6YruPFuSHHQUwZ703IwcDmhCSOaCBGUAZqIoD14qwSBxTcnHIoAhyfSqMzcZq6+ccVnzhsUDuf2c/8Gwuf+GXvifnv4zhH/lOt6/pgJxk1/NN/wAGw4A/Zc+Jx/6nSE/+U+3r+lhgdvNfJ5g/37P0LKf90h6DW5OPSo8Yp5IJJxmmn1rjbPRGksAdvPtX8qX/AAc2/s3W194M+HH7XWjw/wClaReP4R1aRRkm0vg9zZO3tFcRyxj3nFf1XHpXwJ/wVL+Dsfx2/wCCePxf+HwXdcDw3darZ8ZIvNHxfwY9y8AX8a6cFN06sWjgzKiquHlB720P8+39kH9pvxJ+xh+0f4T/AGlfDLOR4avAdSt4z/x96TP+7vrcjvvhLFAeBKiN1Ff6eugazpPiPRbTxBoFwt3YX8EV1bTocrLDModHHs6kMPrX+T6lxbXsAuoyGhmUMOc5RhnB59DX+h3/AMEQvjK3xl/4Jl/Da51C5+06j4UgufCt5k5ZW0eZ4Yc8k5a18hh7EHvXrZxRTiqqPC4exLU5UHtuv1P1gxxmgjHFDNjjGPWkHPSvnbH1gUUuD1oxmkgQ4MSa/k7/AODgf/gnHpVhp9z/AMFBPg1ZC3eNoofHNnAMJIjkRQ6sqjkOhKRXhHDIUlIBR2P9YWK5/wAX+EvDHjzwlqngfxvZR6loutWk+n39pLzHPa3SNHLG3qHRmGPf1FdmFrulUTjscuNwsa9JwkvRn+VO33sHtSAkNkGvf/2of2dNd/ZM/aK8Z/s2eIZJLiXwfqktlb3MvDXNiwEtnOeSCZbZ42P+1kdq8DKMOD3r6xPmSaPzucHCTi91oOU5PSkB2rjvQp2kg01zzxWhD2Gk9zSFgOKRhwc1Gw74xQQDnngVl3XKkGr0pK5INZN246D1FLqNH+ht/wAEIlK/8EpPhT7nWz/5Vbuv10r8jv8AghG2/wD4JRfCh/bWh/5Vbyv1xr5jFfxZep+i4J/7PT9Ef//T/oG/4OBZAv8AwTF8WE99b8Ogf+DCKv4FkI24r+93/g4MOP8AgmH4o/7Dvhz/ANOEVfwOR9BmvWy3+B8z5XPv94XoWMgnFNO/tTh7DFOwcZruPEexGQccd+tKBgCnUgzjmggCATk9qjYgmpD71EfpigBh5XGKqyAY5q3VeZSQcUDR/Z3/AMGxaY/ZY+JrevjNP/Tdb1/Suw5r+ar/AINjXB/ZZ+Jyjt4zjP56db/4V/Ss5618pmH8dn6FlP8AusPQibpgUxugBqTvmoa4W9D0RKwfFWk2+v8AhfU9Bu1DxX1nc2zqehWaJ0I/I1vVma5fRaXoV9qtwwWO1tp52J6ARxsxJ9gBVx3RMtdD/KY1rw7H4e8KeCLu3QRR6n4XsJjjvLb77aVvqxiDH3NfqX/wSV/4Kjaz/wAE7/iPqPh7xta3Gs/DHxbNHLq9lbjfc2N1GvlrfWyHAdgmEniyDKiqV+dFVvjT4n+F1/4ZT+EPiwrieGwNu59Y7xftCfkQcfWvlGRGABHX/J/rXvZViI4zCyjNXSlJfc2j5XP8HPLsyUqWnNGEl/29FN/jc/1TPgx8dfhD+0R8PbP4rfA3xHY+KfDl+Mw39hL5se7HKOOGjkX+OORVdTkEcV62nI57V/lf/Ab9or46/sweNT8RP2fvFuo+EdYcATS2Mo8q5VedtzBIGhuF9pUYemO/9Vv7AP8AwcRaV4+8R6R8H/239Jt9E1DUp4rO28V6OhXT3mlYIn260Ys1tuY4M0TPECclI1y1ceJyqcPepu6PQwWdU6tozVmf1K46+1KMd6ccqxjf+EkH8Dzjr3/yabg4ryup7l09UP2r6UvCfMOKaPmJNKVyMHmhgz+Mv/g5S+EVp4b/AGm/h98atPgEY8Y+HJ9Ou2UY33Oizgozf7Zhugv+6gHQV/N9ICcnHJNf2O/8HMvh2O4/Z4+FHi4482y8W3loD323enyuf1gFfxyTcZr6zL589CLZ8BnFPkxcrdSsWAHSm7gM0EnGBTGU5612nmt6DiVK+tRv1xinKCAcc1G56mggryY2kAVkXYO3C8dK05ORxWXdHAPfp/OgaP8AQ9/4IPLj/glB8Jye41v/ANO15X67/u6/Ir/ghAwf/gk98JyOw1sfj/a15X6418tin+9l6n6HhP4FP/CvyP/U/fv/AIODAD/wTC8U/wDYe8Of+nCKv4G4+gr++n/g4HTd/wAEw/Fee2ueHP8A04w1/A1GDjivWy3+B8z5TPX/ALQvQnXrTjwvPU0KfWlYZz3ruPEciBm20u4YzSnpTVBHBoF5ikbhTWXPSjJBPen0CIiCo+tVXLA5q3JyuKpSZXrQNH9nH/BsX/ya/wDE9vXxlF/6b4K/pbfrX80n/BsUc/svfE8enjKL/wBN8Ff0usvXPUV8nmP8Zn6FlP8AusPQjqEjv61K2dpxUPQYNeeeiHPavhD/AIKe/F//AIUb/wAE+fi98QLeUxX3/CN3WmWGDhmv9WAsbZV/2jLOpA9vTmvuouAMn/Hsfav5xv8Agtv8a4PHHxL+H/7HujzrLa6G6+O/FEa4I3QFodHtn5P35zLclTztiU4wRSq1o0acq1TaKv8A18zTDYaeJrww9P4pNL7z+dn9qvw/Y+Ev2eNK8GWagx6JPplhGR6W8TRH+Rr8ynTPB/Cv0l/bP1aOPwPo+jE7pb3UTLjP8NvGck/8CkFfnE6ZA7cV18D8zyz2svtSk/x/zOPxTUI517KGnJCC/D/IzWQDvj/P+cV+7P8AwQ5/4Js+Gf2yPijqHx3+MM6S+CfhxqNqv9kKRv1TU9ouI0m7pawgK7jGZm+TO1XFfhc6HB2nnn8+n9a/d/8A4N44P2mJf24LqX4O3X2bwLBpnmeO1uFL2stnlxZRoMjF4bjcbdwcrGs2TtJU/T4ptUpNM+Iy1J14KSuf3ciRpGLyHLMdxPrmpFJFV4yQAvGe+Omf8/pU4Ga+SPvUl0Jhg801iOlKA3Ummvg8GobKP50P+DlsqP2Qvh3zz/wnK4H/AHDbyv4t5WOAK/rZ/wCDnLxrInhT4L/DKGYYu9S1nW5ox1xaww28ZPtm4cD6V/JM6Hqea+syzShE+Dzx3xUv66Fbd8ue9LncM5x601wQeTSqMDOa7zyEOHTjioj7VOASM1FsNK4W1sVTWXeJlTitl1z+FZFyCFOaY/I/0N/+CEC7P+CT/wAKB6jWz/5Vryv1yr8kP+CEZ/41P/CYf7Otf+na8r9b6+XxX8WXqfoWE/gU/Rfkf//V/oC/4OBm2/8ABMPxT7674c/9OMNfwMoSePTNf3zf8HAq5/4JieKge2ueHT/5UIq/gcQcfXmvWy3+B8z5XP8A/eV6f5kyHjntQwJ5FCjacGhxmu48PlRFRSkY4owT0oEyNwT0pVyBzTiD3pAOMUCGv0z61Sn44IrQKD0xVCdODQOO5/Zn/wAGw2P+GX/iif8Aqcov/TfBX9MMgyxNfzO/8Gwpx+y98UV/6nKL/wBN8Ff0xSHJ4r5TMP47P0HKf91p+hCwyMVXkyckdKsFgvWowhIwOfp78elcHU9Jux4d+0H8d/h5+zJ8FfEvx9+K1z5GgeF7J7y42YMkx+7FDEP4pZ5CsUa92cV/Fc/in4g/EPxHr/xr+LY/4rDx3qEms6vGpyLZpMLb2if9M7SAJAg9iepNff8A/wAFV/2rE/aj/aSH7Pngm7E3w9+EN8ZNUeI5i1XxYq8R56PFpaMQecG5c5+4Mfk18d/i/bfCrwfLe27h9XvS8FhGOQZsfNIR/cjBDHPU7R/FXzXEFWpXnDKsNrKT979F6Ld/8A+64Sw9PB0que4zSEE+Xz7v57I+Mf2ofHEPi/4lvo9k4e00CI2asDkPMxDTEY44OEB/2a+bpB+NV4ZGA/euXdiWZmOSzHqxPck8k+tXBluFr9Ry3AwweFpYaG0Vb/P73qfhGc5pUzLHVsdV3nK/oui+SK/l84A5/T8a/WP/AIJB/t3+OP2LP2krbwhpmjy+JPDPxMvtO0jVtLtUDXxuDIYbW5tDwTLEZm3xE7JY2YcMqsPylxgkivrL9hX9pTwx+yF+1t4J/aL8ZaIde0vw3dyNd28YDXEcNzC8Ek9uDgGeBZDJGCQGI25BIYb14KVOSaucuEqShVjJO2u5/pjbTFI0Wd2xiuR0OD29qsDrXI+B/F3hb4h+ENK8e+Br+HVNE1qzgv8AT7y3O6K4tbhA8Uing7WUgjgY+ua62vjmrOzP0ZO6TvcnJA60yQ4Xjr+v4U0tlfmIH14r4a/4KIftr+GP2E/2Ytb+MuovFNr8ynT/AA1p0h5vdXmU+SpXqYouZpz2iQ9yASlTdSSiupnWqqnFzlsj+Rb/AILvftAWPxw/b/1jwnolwJ9L+G2nweGEZTlDegm5viPdZZVib3iIr8XZssc9z1q5e6rqutajda1r929/qF/PLdXl1M26We5ncySyOf7zuzMfrVRzk19nRgoQUV0PzrFVnVqSm+ruVSqgkNTQAOlSkqT83FJncQK1MENGO9DYHPanYPIFQOe2KCXuQuR1NZN3ypHvWm5/Ssm7b5M+4pMdz/Q6/wCCEf8Ayih+E59tb/8ATteV+uNfkb/wQfyf+CT/AMJ/prf/AKdryv102NXzWI/iy9T9DwivQp+i/I//1v6AP+Dghwv/AATF8U++u+HB/wCVCKv4HY2BHSv73v8Ag4L5/wCCY3if/sO+Hf8A0vjr+BuM9MV62W/wPmfK59/vPy/zLg2selI3TGc00dRU2RnFdx4omAeTSgDqKD0NIowMUEPcU9KB0HFNc4GBQjdjQIUgdTVCcKO1aBGRVG4POaTA/sl/4Nizj9mX4pFeM+Mof/TfBX9MZPzEV/M1/wAGxQ/4xl+KXt4xh/8ATfBX9Mco718rmP8AGkfoeU/7rD0ImJJr85v+Cof7ZOofsdfsuXes+ApEb4g+NLlfDXhCFsHGpXindcsP+ednEHuHJGMoqn7wr9FJflX36V/HJ/wUb+Nl9+0n/wAFGPE8Kyl/DPwUtz4Q0aIElH1e8VJ9WueSfnX93bDHRU9SRXkYvFQwuHqYqe0Fou76L7z3MtwMsdi6ODi/jevkur+4+HIoPDHwe+HKw3F0x0/SYWknu5julndzukmkPJaWeVi56ks2K/Jf4kfEbWfih4vm8V6r+7jx5VtATkQ26nIX6nqzfxMcnjFe7/tW/FlvGHif/hXWgy7tM0iXdcspyJrwcEehWEcDsXLHsK+UoYJLiaK1to3llldY4o41Z3eRztRFVcszkkBVUFiSAAc118HZLOlR/tHFr99U116J6/Js5fEbiiGIrrJ8vdsPS0dvtSWn3Lp8ySJyMA8kAdetaBvLa1j86+ljgX+9IwQf+PEV/SX+wR/wbxeP/inpNj8Uf2376+8EaPcqk1v4XsNqa1NGwyPtkrB0swRjMSq84B+Zo2GK/pi+EP8AwTh/YM+BGn29j8MvhL4ZtpLbG27vLCPUb5iP4nubvzZmbryW/wAB9NXzKlB239D4fDZLXqxUpaLof5pTa5oUvyw3tvIx6BJVY/kDX0Z8F/2Tf2ov2j9Th0z4E/DzxD4paYgLNaWMkdoM93u5hHbIPdpAK/00bPwL4I0xhJpmiaXbFRwYbKCPGOmCqAj6V2AkmaLypJG2AA4J+UDtx0Ht/OuKWc2+GJ6MOHldc8z5B/4J9/AHxt+yx+xV8Nv2e/iVdwXmv+FtHS1v3tXMkCzu7ytFGzAF0i3+UrYG4LkACvsTIrJ13XtC8I6Fc+J/FN7baVplnGZLi8vJVt7eJB1Z5HKqqjrkkdK/Bb9sT/g4M/ZZ+DFvdeEv2ZIj8VvEyhkF1bO1toNvIM8veFd1xg9VtUZW6eYvWvMVCrXnzJbntVMRRw0Epy208z9f/wBpL9pj4Nfsm/CXUfjX8d9aj0XQdOwu4gvPczsDst7eJfnmnk6IijPc4UE1/n2ft/8A7d/xL/b/APjlJ8UfGULaVommRvZ+HdD8zeum2TMGbew+V7q4ID3EgGMhUT5EUnyz9qf9rj9oD9s/4j/8LR/aE8QPrF5AJF0+ziU2+nabFJ1js7ZWKxA4G5yWlkwPMkbHHzbn17fyr6DB4BUfel8R8nmWbyxHuQ0j+Y9TjjcSB/n/AD/On7x2qMjBxmkBxXdY8Rjm5JxTc9qbnHbNMJ9RVjvoSVDIexpASDxSN8xoJKzdDWVd9PyrWYYyKyrtfl59aBo/0Pf+CD4x/wAEn/hPn/qN/wDp1u6/XfIr8hf+CDhJ/wCCUHwpz663/wCnW7r9esn0/wA/nXzGI/iy9Wfo+Bf+z0/RH//X/f3/AIOCf+UZHiYf9R3w7/6Xx1/A6i96/vi/4OCDn/gmR4nz/wBB7w7/AOl8dfwQKeOletlv8D5nyuff7yvT/MkUEipRxxUIx3qYDA4ruPFF9qTnNLSHPagzI2U5zShSOacrZoOeo7UAGe5HSqk6gjIqwzEjFU5nxgHigD+yn/g2JBH7NXxU/wCxwgP/AJT4a/piav5nP+DYhw37NfxUH/U32/8A6b4a/pmkI5Ar5TMP40j9Byr/AHWn6HH+OfGOkfDjwXrPxG8QPssfD9hc6ncN6RWkbSsfyWv86fUfi/qnhb9nKX4v6s+fE3jm5utY3nkvqGtTPcs59fLV8/8AARX9sX/BYHxfeeB/+CX/AMc/EGnyGKX/AIRS6tVYdvtjJbn9JDX+f9+1Zqslpr3hn4ZWh22nhnRLIFBx/pFxCrE/UR7APqfevOq4BYydDDy+Fy5pekVt97R7WGzL+zqGLxkX76hyQ8pTe69FFnzUssUMJd23AZLE5Ykt7AEszE+5JPrX9v3/AARe/wCCRGm/s2eGtN/at/aZ0lZPifqUQuNI0y7QH/hHLaVflLKcj+0JFbMr9YFPloQd7N+M/wDwb6/sPaV+03+0/e/tAfEW1W78J/CWS2u4beVcxXmvTkvaKwP3ktVU3LL/AM9PJzxkV/eAd7j5yWJ6luc17+a4vl/cU/mfIZHgFJfWaur6f5n5Jftif8Fl/wBlf9iP43XPwE+KmheKdR1y2sbPUXk0eztprYxXqsY8PLcwtuGw7sr+Jr451n/g5f8A2SLaAt4e+HfjnUJRyqzJp1qufdjeSH/x2vxp/wCDgMMP+Clmst0/4pbw9j/vi4FfiuSx4Fb4fLqMoRlJbo58ZnWJhWlCD0TP6rPHv/Bzjq0sDRfCz4MxxS/wza5rZYfUx2tv+nmV8FfFz/g4G/4KI/ECN7XwZfeH/AkDgj/iTaYLi4UH/ptfPOM+4jFfiOMqCPWmvyeOa7YYKjF3UTzKmaYqfxTZ6r8Yvj58df2h9QXVPj9401zxtMjb0Gs30lzCjescBIgjx22RLXlO55PvEkjH6UgXPI59qcBkeldCSSsjgcpPV6+oDJ6nn2qQZPXimhBipNp6UyQOSdxoAJ6U/kADGad8q+1AELKwHHFRMFB96suQcYqu/PTtQBHUgXPBqOpd4zQBBIABWReMNpxWrKeeKxrv7hoKR/ob/wDBB/j/AIJQfCjHf+2//Trd1+u1fkT/AMEHQR/wSf8AhTn/AKjeP/BreV+u1fLYr+LL1P0TBP8A2en6I//Q/fj/AIODH8v/AIJjeJj66/4cH/k/HX8EcZyK/vd/4ODE3/8ABMXxN7a/4cP/AJPx1/BHGCF5r1st/gfM+Vz7/efkSAE9KmBB4qCnhjj6V3HiktMZuCBTg2ajcc5oIaANgcdaN2fvUykOccUCBjgHFULjmrj+vpVSYEdRQxo/sn/4Ngl2/s1/FXP/AEOFv/6b4a/pqbO7mv5nv+DYdP8AjGb4osO/jCH/ANN8Ff0wvwea+WzH+PI/QMr/AN1h6H5Z/wDBbPS7nWP+CUPx1s7VSzp4Ze4wPS3nhlP5BTX+fF8ftUGt/FvxBrbsDEZY9rZyBHHDGq8+gC5r/Tl/aw+FR+O/7L3xG+C0SCSXxV4Z1TS4VPea4t3WLHv5m2v8tC2s77U9CWzu1KXN1Gts4fkrLJiMg5/usce2MV1ZVTT/AHnVJ/jb/I83PasoxVFbSaf3X/zP9EP/AIIo/s7wfs5f8E4vh7p09sINY8Y2x8XasSMO1xq+JIQ3vHaiCPH+zX6wgcYrn/C/h+y8J+HNP8KaaAltpVrBZQqOgS2jWJR+AUfhXRKvH1ryK83Obk+p72HpqnSjCOyR/Bx/wcFbf+Hk+qA/9Cp4e/Mi5r8TwU75xX7Y/wDBwbCy/wDBSXU27N4T8PfoLkV+JgXjBr7DDfwo+h+f4/8A3mp6jmYYyuabuOc9RSEbflHejBHStjiHLhV3E9am2k9KhXGOKsJjFAC7QBjGaNo69KdSjHXGaAG4AHrUJ4OKmY8bhx7VCx3ZoAjL4NMODzmkCk9KXBU5NAATwB6U2nM26omPGOlADG+9WfcoNpFXqp3X3TQUj/Q5/wCCFCCP/glF8JgB1XWj/wCVW8r9bcr6V+R//BCR/M/4JRfCg+g1of8AlVu6/W6vl8V/Fl6n6FhP4FP0X5H/0f38/wCDgltv/BMfxPnvr3hz/wBL46/giU5UGv72f+Dg0Z/4Jj+Jf+w/4d/9L46/ghjfgD2r1st/g/M+Vz7/AHlen+ZNRSjHSn7ePmruPFAEAYI6U1sHoKTqM0A0CY3NRsVJ4qWmlBQQJjjgdaqz5PPXpV0DAxVSbpzxzSGnuf2Xf8GxDY/Zk+KI9PGMP/pvgr+l9z3r+Z3/AINisj9mP4pE9f8AhMYf/TfBX9MLHJr5XMP47P0HKf8AdqfoVvMeIiWM4ZCGHpkf/Xr/ADfP+CsvwCb9kP8Abp+IHhW1txDpF1qK+LdGVRtU6fqchugijsIZxNB/2zr/AEg3TPB6V/Pf/wAHC37CF7+0z+y2Pj98PbI3Pi74YwXM9xHEu6W+8P3ABvoQByz25Auol/upKo5fFXluJ5KnLLZmOc4R1aHNHeOp+/ml38GsafBq9swaK8iS4Rh0KzKHB/IitUetfCf/AATP+M1v+0D+wD8IvivHOLia98MWNtduGDf6Xp6fZLjJHfzYWJ+tfdQAA49a4K0eWTTPTpSU4KS2aP4S/wDg4RCv/wAFH73A5HhLw+P1uq/Dw47jNfuF/wAHByFP+Cj99Iej+E/D5B9h9qr8PScV9jhv4UfQ/PMw/wB5qeo7GTgUFOcgUqNxzxUrEjmtjjRAdvpg1IgOM0nQHNKCxx2qepTSH0dKKKoOghz2qMnIJHepe2ar0EiEhaY3zcjtTdpJpACelACY71Cy4qzjseKjKhvwoHYgqpdDKnNXthwapXR/d0FLY/0MP+CEI2f8Eo/hSD/1G/8A063dfrrlfSvyK/4IQtn/AIJRfCnP/UbH/lVu6/XKvl8V/Fl6n6Hgn/s9P0R//9L9+P8Ag4Nwf+CY/iUf9R/w5/6Xx1/BAisMZr++P/g4JUH/AIJkeJf+w/4d/wDS+Ov4IU+6DXrZd/B+bPlc+/3len+Y8dalLYqGlzgYruPFHEqee9Mz2prNgVFkmgh7lgY70H1AxUSNng1JQIPaqkxHQEc/14FPvZZrawnubeNpnjjd1jTqxUEgDpyeg96/cv4H/wDBO7/gl/bXmneIf2nv2wPDNxZMsU8+h6EY7CchlDGGW5knuHiIJ2N5casMHDA5qKlRRV7G9GjKroml6n7Hf8G03gPX/D37GXjHx1q0TR2firxjPLYFhjzIrC1gtpJFPdTMsiZ/vIfSv6Ls5JY1+Y3wu/4KF/8ABJ/4ReANH+F3wr+LfgfRPDmgWkdjptha3ypFBbxDCqoIJ9ySSzMSzEkk16Cf+Cp3/BN4dfjh4NH11OMf0r5fE06tSo5qLt6H3WDq0aNGNPnWi7o+9X5ANV5VVoyrjIIxgjIOfUHgj1B618JH/gqV/wAE3yox8cPBh/7icf8AhTW/4Kif8E5TyPjh4LH/AHFIxXMsNWvpFnT9boPRzX3o89/ZJ+Bk37CHxi8Ufs7+HIvL+E/j3U7rxN4J2r8mjanP8+p6KecLG+37ZZeqCdOsY3fpkOVAAyevzdfr/ntX5/T/APBU3/gm+MCT43+DTtZWx/aKMNynIPQjI6g9RViL/gqZ/wAE5ZlAT43eDQDx/wAhJAB26H/PNXUo1pvm5H9xNPE0IK0Zq3qfzK/8HIfwy8UeG/2yfDHxauoCNF8WeFbaxtLgD5De6PNP58RPTeI543A6lSSOFbH88bSoThef/rV/oBftP/tbf8Ed/wBrX4T33wW+P/xS8F61oV46zqo1MR3Frcx58u4tp0AeGdMnbIp6EqwZSQf5kfi7/wAE5f2AP7WluP2dv2yfA8ti7ExWnikhJYxklVN1asqvjj5vs6njpXv4LES9mozi0/Q+VzPCRdWVWjNNPXc/HOF1YBgeKssMj1rU8QaEvhjxPqnhlb621RdMvLi0W+snL2t0IJGQTQM2C0MgUNGSAShBIBNZTAkYFejoeG1rZjDjJ4pvXkZpzHJ4plMGiTcT/WnbhnNRc4pMd6LkkhZj04pu00uRt5pDwKAIXXnIqTIPSmt0+tCDAoAUk+lNYDGcU+o3OeCKB9BjdMGsy5A2+laJIHQVmXbfLtoH0P8AQy/4IQD/AI1SfCsf7Wt/+nW7r9dtq+/+fwr8if8Agg6c/wDBKT4V/wC9rn/p2u6/XqvmsQv3s/U/QsH/AAKfovyP/9P9+v8Ag4McJ/wTH8Sk/wDQweHB/wCT8dfwRRn5ea/vb/4ODYy//BMXxP7a94cP/k/FX8ESMAMGvWy7+B8z5XP3/tK9P8ybGaQ8Cmb1o8wf5/8A1V3HhyGNk8k5qJye3apCc1CXOcUWJJ4yD83pU1U1f1qdX9aBotR8HI69jVebjhMgDp/n/wCvT1kUHNMdwRgUrAmV97qclj/n8af5sh53GmlQTShQOlHyLTfcetxIBgM35/8A16kaeQ8bmx9agPpSj0zS17Bd9yTzX7u2PTNPSRx3I9v8moeMVIrCqs+wm/MseZIerN9M/wD66RXKNuyeKargUhOTS5QvbqSKQBtBzSru/iqNWxUm8YoSExj/AEpgORSs+BwKgLFqY29CalqsJQvHWn78crRYgkYkLkU1nBGOtQyOTwaiDEUATjGealXHaqnmN/n/APVS7+KALJcdqa5B6VX3tTlf1oAVjgVnXSgqavs3YVm3Mnymi40f6HH/AAQjUR/8EpfhT7/20fz1W7r9dN61+Rf/AAQmfd/wSi+E/wDu61/6dbuv1ur5rEfxZep+iYD/AHan6I//1P6AP+DgjA/4JheKixxjXPDn/pwir+BQuCMiv9LT/goz+x34g/bv/ZT1j9m/wtrlv4cvdTvtNvkvrqBriJBp9yk5Uojox3hcZ3cV/Od/xC2ftBkfL8XvDmMd9Iuv/kivQwFeEaNm+p83nOEq1K6lHsj+XouQMkY+tOD+tf1Af8Qtn7RKg7fi54aP/cKux/7cUz/iFu/aLZsH4ueGv/BVd/8AyRXb9ap/zfgeV/ZuI7fkfzBlvSocgniv6hR/wa2ftEf9Fd8Nf+Cm7/8AkimP/wAGtn7RecL8XPDJ+uk3f/yRT+s0/wCb8A/s6v8Ay/kfy+DJzninByOlf0/j/g1q/aMJwfi54Z/8FN3/APJFSJ/wa0/tC9H+L3hsf9wm6P8A7cil9ap/zB/Z1f8Al/FH8v2X9Kbk1/UL/wAQs/7QOcn4weHPb/iT3R/9uqrzf8GtH7Ro/wBX8XfDJ+uk3Y/9uDR9ap/zAstr/wAv5H8wYcr/APXoywHWv6eT/wAGtn7Sqtj/AIW14YP/AHDLz/4/Tx/wa3/tKf8ARW/DA/7hd2f/AGuKPrVP+Yf9nV/5fxR/MIgOc1ITiv6eR/wa3/tJd/i34YP/AHCrv/4/Th/wa4ftIYIPxb8M/hpd3/8AH6PrVP8Am/AX9nV/5fxR/MKORxSE4ODX9PB/4Nbv2kccfFvwwfrpd3/8fpy/8Gt37R+ct8W/DI+ml3f/AMfp/WaX834B/Ztf+X8j+YYN6UM/GSa/p2k/4NcP2kV+58W/DP46Xd//ACRSD/g1u/aSYZPxb8Mf+Cu7/wDkij6zT/m/AX9nV/5fyP5iFkJ5z+tSB2PSv6cv+IWz9pMDj4t+GD/3C7sf+16dH/wa4/tHf8tvi34aHpjS7s/+1xTeJp9/wBZfX/l/Ff5n8xJb1NRu3pX9QK/8GuP7RAXI+Lnhv/wVXf8A8kUv/ELd+0S4Lf8AC3PDf46Vdn/24qfrNPv+A/7Or/y/ij+XgnFLv7Zr+oH/AIhaf2jANy/Fzw1/4Krsf+3FNP8Awa3ftGgY/wCFt+Gf/BXd/wDyRR9ap/zfgL+zsR2/I/l/yPWomY5r+oM/8Gtn7R+3I+Lnhn/wV3f/AMkUi/8ABrZ+0gevxc8M/wDgru//AJIo+sUu/wCA1ltf+X8j+XzJpcsa/p+f/g1q/aP3f8lc8M/+Cu7/APj9Kf8Ag1p/aOXr8W/DP/gqu/8A4/R9Zpd/wB5dX/l/FH8v2cc1Irn+Liv6fm/4Naf2jF6fFzwz/wCCq7/+SKX/AIhaP2kMH/i7vhkf9wq7/wDkij6zT7/gP+zq/wDL+R/L+8g9azbg5Xmv6jj/AMGtH7SJJA+Lvhk/9wq7H/txTP8AiFi/aPcEyfF3wyoHcaXdk/8Ao+j6zTfUay6u38P5H7Yf8EHjn/gk/wDCnJzj+2//AE63dfrpXxx/wT8/ZT8QfsRfsg+EP2YfFOsW2v3/AIZ+3+bf2kLQQzfbLua6G1HZ2G0TBTljyK+ysr6V89WlF1JPzPucFFwoQjJ62R//2Q==" alt="Poiema Haus"></div>
+      <div class="logo-poiema">POIEMA</div>
+      <div class="logo-line"></div>
+      <div class="logo-haus">HAUS</div>
+    </div>
+
+    <div class="hero-eyebrow es">Análisis de Imagen Personal</div>
+    <div class="hero-eyebrow en">Personal Image Analysis</div>
+
+    <h1 class="hero-title es">Tu Identidad <em>Revelada</em></h1>
+    <h1 class="hero-title en">Your Identity <em>Revealed</em></h1>
+
+    <p class="hero-sub es">No se trata de cambiar quién eres — se trata de descubrir cómo mostrarlo. Un análisis de imagen integral: color, silueta, rostro y estilo, entregado en una experiencia digital que llevas contigo a donde vayas.</p>
+    <p class="hero-sub en">It's not about changing who you are — it's about discovering how to show it. A complete personal image analysis: color, silhouette, face, and style, delivered in a digital experience you carry with you everywhere.</p>
+
+    <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/clau-kusi/poiema-haus-descubrimiento-discovery-call-clone'});return false;" class="cta-btn es">Agenda tu llamada de descubrimiento</a>
+    <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/clau-kusi/30min'});return false;" class="cta-btn en">Book your discovery call</a>
+    <div class="cta-note es">15–20 minutos · Sin compromiso</div>
+    <div class="cta-note en">15–20 minutes · No commitment</div>
+  </div>
+</div>
+
+<!-- FILOSOFÍA -->
+<div class="section">
+  <div class="content">
+    <div class="editorial-quote">
+      <p class="es">En Poiema Haus no te digo quién deberías ser. Te muestro, con precisión, qué colores, prendas, cortes y accesorios te favorecen — y trabajamos juntas para descubrir no solo el estilo que ya tienes, sino el que quieres tener, en la etapa de vida en la que estás.</p>
+      <p class="en">At Poiema Haus, I don't tell you who you should be. I show you, with precision, which colors, garments, cuts, and accessories favor you — and together we discover not only the style you already have, but the one you want, at this stage of your life.</p>
+      <div class="signature es">— Con amor, Claudia</div>
+      <div class="signature en">— With love, Claudia</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUÉ INCLUYE -->
+<div class="section section-alt">
+  <div class="content">
+    <div class="sec-head">
+      <div class="sec-eyebrow es">Un solo proceso</div>
+      <div class="sec-eyebrow en">One single process</div>
+      <div class="sec-title es">Una imagen completa</div>
+      <div class="sec-title en">A complete image</div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon es">Módulo 01</div>
+        <div class="service-icon en">Module 01</div>
+        <div class="service-title es">Colorimetría</div>
+        <div class="service-title en">Color Analysis</div>
+        <div class="service-desc es">Tu estación de color y la paleta que hace que tu piel resplandezca sin esfuerzo.</div>
+        <div class="service-desc en">Your color season and the palette that makes your skin glow effortlessly.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon es">Módulo 02</div>
+        <div class="service-icon en">Module 02</div>
+        <div class="service-title es">Silueta</div>
+        <div class="service-title en">Silhouette</div>
+        <div class="service-desc es">Tu tipo de cuerpo y cómo vestirlo con elegancia.</div>
+        <div class="service-desc en">Your body type and how to dress it with elegance.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon es">Módulo 03</div>
+        <div class="service-icon en">Module 03</div>
+        <div class="service-title es">Cabello</div>
+        <div class="service-title en">Hair</div>
+        <div class="service-desc es">Cortes, lentes y accesorios que favorecen la forma de tu rostro.</div>
+        <div class="service-desc en">Haircuts, glasses, and accessories that favor your face shape.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon es">Módulo 04</div>
+        <div class="service-icon en">Module 04</div>
+        <div class="service-title es">Maquillaje</div>
+        <div class="service-title en">Makeup</div>
+        <div class="service-desc es">Tonos y técnicas que favorecen tu paleta de color.</div>
+        <div class="service-desc en">Tones and techniques that favor your color palette.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon es">Módulo 05</div>
+        <div class="service-icon en">Module 05</div>
+        <div class="service-title es">Estilo Personal</div>
+        <div class="service-title en">Personal Style</div>
+        <div class="service-desc es">Cómo expresar tu personalidad a través de la ropa, con recomendaciones para tu día a día.</div>
+        <div class="service-desc en">How to express your personality through clothing, with recommendations for everyday life.</div>
+      </div>
+      <div class="service-card bridal wide">
+        <div class="service-icon es">✦ Módulo Novia</div>
+        <div class="service-icon en">✦ Bridal Module</div>
+        <div class="service-title es">Para tu día más importante</div>
+        <div class="service-title en">For your most important day</div>
+        <div class="service-desc es">Un módulo especializado, opcional, pensado para acompañarte en la etapa previa a tu boda.</div>
+        <div class="service-desc en">A specialized, optional module designed to guide you through the lead-up to your wedding.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CÓMO SE ENTREGA -->
+<div class="section">
+  <div class="content">
+    <div class="carry-box">
+      <div class="carry-title es">Tu resultado, siempre contigo</div>
+      <div class="carry-title en">Your results, always with you</div>
+      <div class="carry-desc es">Al terminar tu sesión, recibes una página web personalizada — creada exclusivamente con tu nombre y tus resultados — que puedes abrir desde tu teléfono, tablet o computadora, en cualquier momento. Tu análisis no se queda guardado en una hoja de papel: vive contigo.</div>
+      <div class="carry-desc en">When your session ends, you receive a personalized webpage — created exclusively with your name and your results — that you can open from your phone, tablet, or computer, anytime. Your analysis doesn't stay tucked away on a sheet of paper: it lives with you.</div>
+      <div class="carry-chips">
+        <span class="carry-chip es">Teléfono</span>
+        <span class="carry-chip en">Phone</span>
+        <span class="carry-chip es">Tablet</span>
+        <span class="carry-chip en">Tablet</span>
+        <span class="carry-chip es">Computadora</span>
+        <span class="carry-chip en">Computer</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACCESO FUNDADORA -->
+<div class="section section-alt">
+  <div class="content">
+    <div class="founder-box">
+      <div class="founder-eyebrow es">Acceso Fundadora</div>
+      <div class="founder-eyebrow en">Founding Access</div>
+      <div class="founder-title es">Un grupo reducido, por ahora</div>
+      <div class="founder-title en">A small group, for now</div>
+      <div class="founder-desc es">Estoy trabajando actualmente con un número limitado de clientas fundadoras, brindando el análisis completo de forma gratuita a cambio de su experiencia y retroalimentación honesta — antes de abrir el servicio de forma general. Si formas parte de este grupo, no solo recibes tu análisis completo sin costo: ayudas a dar forma a cómo Poiema Haus atenderá a cada clienta que llegue después de ti.</div>
+      <div class="founder-desc en">I'm currently working with a limited number of founding clients, offering the complete analysis at no cost in exchange for their experience and honest feedback — before opening the service to the public. If you're part of this group, you not only receive your full analysis at no charge: you help shape how Poiema Haus will care for every client who comes after you.</div>
+      <div class="founder-note es">Esta fase de acceso fundadora es única — no se repetirá una vez el servicio esté abierto al público.</div>
+      <div class="founder-note en">This founding access phase is unique — it will not be repeated once the service is open to the public.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CÓMO FUNCIONA -->
+<div class="section">
+  <div class="content">
+    <div class="sec-head">
+      <div class="sec-eyebrow es">El proceso</div>
+      <div class="sec-eyebrow en">The process</div>
+      <div class="sec-title es">Paso a paso</div>
+      <div class="sec-title en">Step by step</div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="process-list">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div>
+          <div class="process-title es">Agenda tu llamada</div>
+          <div class="process-title en">Book your call</div>
+          <div class="process-desc es">15–20 minutos para conocernos, explicarte el proceso y resolver tus dudas.</div>
+          <div class="process-desc en">15–20 minutes to get acquainted, walk through the process, and answer your questions.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div>
+          <div class="process-title es">Recibe tu guía previa</div>
+          <div class="process-title en">Receive your pre-session guide</div>
+          <div class="process-desc es">Instrucciones claras sobre medidas, fotos y qué necesitas preparar antes de tu sesión.</div>
+          <div class="process-desc en">Clear instructions on measurements, photos, and what you need to prepare before your session.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div>
+          <div class="process-title es">Envía tu información</div>
+          <div class="process-title en">Submit your information</div>
+          <div class="process-desc es">A tu ritmo, a través de formularios simples y guiados.</div>
+          <div class="process-desc en">At your own pace, through simple, guided forms.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div>
+          <div class="process-title es">Recibe tu página de resultados</div>
+          <div class="process-title en">Receive your results page</div>
+          <div class="process-desc es">Tu análisis completo, personalizado, listo para llevar contigo a donde vayas.</div>
+          <div class="process-desc en">Your complete, personalized analysis, ready to carry with you wherever you go.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="section section-alt">
+  <div class="content">
+    <div class="final-cta">
+      <div class="final-cta-title es">¿Lista para descubrir tu imagen?</div>
+      <div class="final-cta-title en">Ready to discover your image?</div>
+      <div class="final-cta-desc es">Agenda una llamada breve conmigo. Sin compromiso — es momento de conocernos y resolver cualquier duda antes de comenzar.</div>
+      <div class="final-cta-desc en">Book a brief call with me. No commitment — it's time to get to know each other and answer any questions before we begin.</div>
+      <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/clau-kusi/poiema-haus-descubrimiento-discovery-call-clone'});return false;" class="cta-btn es">Agenda tu llamada de descubrimiento</a>
+      <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/clau-kusi/30min'});return false;" class="cta-btn en">Book your discovery call</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-name">Poiema Haus</div>
+  <div class="footer-role es">Tu Asesora de Imagen — Claudia</div>
+  <div class="footer-role en">Your Image Consultant — Claudia</div>
+</div>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const inlineTags = ['SPAN', 'A', 'BUTTON'];
+
+  ['es', 'en'].forEach(lng => {
+    const show = lng === lang;
+    document.querySelectorAll('.' + lng).forEach(el => {
+      if (!show) {
+        el.style.display = 'none';
+      } else if (inlineTags.includes(el.tagName)) {
+        el.style.display = el.classList.contains('cta-btn') ? 'inline-block' : 'inline';
+      } else {
+        el.style.display = 'block';
+      }
+    });
+  });
+}
+</script>
+</body>
+</html>
