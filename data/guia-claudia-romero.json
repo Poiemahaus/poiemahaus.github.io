@@ -1,0 +1,193 @@
+{
+  "ui": {
+    "frase_label": "Tu Concepto de Estilo",
+    "teVeo_label": "Te Veo",
+    "estiloHoy_label": "Tu Estilo Hoy",
+    "estiloIdeal_label": "Tu Estilo Ideal",
+    "brecha_label": "La Brecha",
+    "nombreEstilo_label": "Tu Estilo Tiene Nombre",
+    "segundaOpcion_label": "Una Segunda Dirección",
+    "estrategiaColor_label": "Tu Estrategia de Color",
+    "guiaCompras_label": "Tu Guía de Compras",
+    "telas_label": "Telas",
+    "prendas_label": "Prendas Clave",
+    "zapatos_label": "Zapatos",
+    "bolsos_label": "Bolsos",
+    "accesorios_label": "Accesorios",
+    "empiezaAqui_label": "Empieza Aquí",
+    "outfits_label": "Tus Outfits",
+    "imagenYExito_label": "Tu Imagen y Tu Éxito",
+    "mantra_label": "Tu Mantra"
+  },
+
+  "frase": "Radiante, Cálida, Inconfundiblemente Tuya",
+
+  "teVeo": {
+    "parrafos": [
+      "Claudia, tú misma nos diste la clave: classic, ingenue, angelic — y Carolina Herrera, por sus colores alegres y sus contrastes. Eso no es una mujer perdida buscando quién es. Es una mujer que ya sabe hacia dónde va, y que ahora está lista para ejecutarlo con intención — en su cuerpo, en su colorimetría, en la vida que está construyendo.",
+      "Esto no es descubrir un estilo desde cero. Es traducir el tuyo — cómodo, elegante, femenino — con la calidez que quieres que nunca se pierda, sin importar cuánto evoluciones. Y hay algo más: no solo estás vistiendo a la mujer que quieres ser. Estás construyendo la imagen de la asesora en la que te quieres convertir. Cada elección de esta guía trabaja para las dos cosas a la vez."
+    ],
+    "cita": "'Se ve radiante, hermosa, femenina, transmite seguridad y se mueve con elegancia y cercanía.' Esa mujer no es aspiracional. Es la versión de ti que esta guía va a vestir."
+  },
+
+  "estiloHoyIdeal": {
+    "hoy": {
+      "titulo": "Cómoda, Elegante, Básica — con Calidez de Sobra",
+      "puntos": [
+        "Priorizas comodidad por encima de todo. Eso no compite con verte elegante, aunque hoy se sienta así — tu reto no es elegir entre las dos.",
+        "Vistes jeans, vestidos y camisas casi todos los días, con sneakers para lo cómodo y tacones para lo especial. La base ya está. Falta que cada prenda hable el mismo idioma.",
+        "Evitas lo muy ajustado, lo muy estructurado y lo muy revelador — no por miedo, sino porque ya sabes que no es tu terreno. Eso es información valiosa, no una limitación."
+      ]
+    },
+    "ideal": {
+      "titulo": "Auténtica, Femenina, Segura — con un Toque Artístico",
+      "puntos": [
+        "Quieres sentirte femenina, segura y chic al entrar a un lugar — no para llamar la atención, sino porque así te sientes tú.",
+        "Quieres comunicar seguridad, feminidad, originalidad y sofisticación: la mujer que ya no se pregunta si algo le queda bien, porque ya lo sabe.",
+        "Guardas referencias elegantes, fashion-forward, artísticas y de lujo silencioso. Tu ojo ya reconoce lo que te representa, incluso si tu clóset todavía no lo refleja del todo.",
+        "Tu meta de negocio y tu meta de imagen son la misma meta: quien va a ayudar a otras mujeres a sentirse seguras, primero tiene que vestir esa seguridad ella misma."
+      ]
+    },
+    "brecha": "Estás más cerca de lo que sientes. El reto no es de identidad — ya la nombraste tú misma. Es de traducción: llevar 'classic, ingenue, angelic' a prendas reales, en los colores correctos para tu Otoño Oscuro, con las siluetas correctas para tu cuerpo de pera y tu talle corto. Eso es exactamente lo que esta guía resuelve.",
+    "citaAspiracional": "Calidez. Esa es la palabra que elegiste para lo que tu imagen siempre debe reflejar, sin importar cuánto evoluciones. No es un detalle menor: es el filtro por el que pasa cada recomendación de esta guía.",
+
+    "nombreEstilo": "Elegancia Radiante y Cálida",
+    "descripcionEstilo": "Elegancia Radiante y Cálida es la versión ejecutada de tus propias palabras: classic, ingenue, angelic, con la riqueza de color y el contraste alegre que admiras en Carolina Herrera — construida para tu Otoño Oscuro de tendencia fría, donde los colores profundos y saturados son los que realmente te iluminan. Estructura suave, nunca rígida. Movimiento, nunca quietud. Y, ante todo, calidez.",
+    "referentesDiaADia": [
+      "Busca 'dark autumn color palette outfits' o 'deep autumn capsule wardrobe' — para ver tu coloración exacta en prendas reales.",
+      "Busca 'romantic classic style' o 'soft feminine elegant outfits' — la traducción moderna de 'ingenue' y 'angelic'.",
+      "Busca 'quiet luxury feminine' — donde se cruzan tu gusto por el lujo silencioso y tu necesidad de calidez.",
+      "Busca 'Carolina Herrera off-duty style' — tu propia referencia, traducida a piezas que sí puedes usar en tu día a día."
+    ],
+    "advertenciaBusqueda": "Evita buscar 'pastel colors' o 'light spring outfits' — esos tonos claros van a lavar tu coloración en vez de iluminarla. Evita también 'minimalist monochrome' puro: tu paleta pide color, no ausencia de él.",
+
+    "segundaOpcion": {
+      "nombre": "Romántico Artístico",
+      "intro": "Para tus salidas sociales y los momentos donde quieres que la originalidad hable más fuerte, esta dirección le da más textura, más volumen romántico y más color a tu base elegante. Aquí es donde vive lo 'angelic' de tu propia descripción.",
+      "caracteristicas": [
+        "Mangas con volumen o detalles románticos sutiles, sin caer en lo infantil",
+        "Texturas con carácter: lino con textura visible, tejidos con relieve suave",
+        "Combinaciones de color más atrevidas dentro de tu paleta — el 'contraste alegre' de Carolina Herrera",
+        "Una pieza artesanal o con historia por outfit: un accesorio, un bordado, un botón especial"
+      ],
+      "dondeBuscar": [
+        "Busca 'romantic artistic style' o 'feminine bohemian elegant.'",
+        "Busca 'Carolina Herrera colorful looks' — para ver el contraste de color en acción.",
+        "Úsalo para salidas sociales y momentos creativos. Elegancia Radiante y Cálida se queda como tu modo de trabajo y de negocio."
+      ],
+      "diferenciaPractica": "Elegancia Radiante y Cálida: tu autoridad diaria, con clientas y en la iglesia. Romántico Artístico: tu expresión de fin de semana. Ambas versiones son igual de tú."
+    }
+  },
+
+  "estrategiaColor": {
+    "intro": "Aquí se cruzan tu colorimetría, tu cuerpo y tu rostro — la capa que ningún Pinterest te puede dar.",
+    "paletaBase": "Chocolate oscuro, gris carbón, azul tinta y un negro suavizado (nunca el negro puro de un invierno) — tus neutros. Profundos, ricos, nunca planos.",
+    "paletaViva": "Vino tinto, verde bosque, verde azulado profundo, ciruela y un rojo teja intenso — tus colores de impacto. Aquí vive el 'contraste alegre' que amas de Carolina Herrera.",
+    "paletaAcento": "Un rosa antiguo profundo o un dorado tostado, como tu versión de suavidad — nunca pastel, nunca claro. Lo 'delicado' en ti sigue siendo rico.",
+    "colocacion": "Tu cuerpo de pera pide una regla simple: color y detalle arriba, profundidad y solidez abajo. Un color vivo o una manga con volumen en la parte superior atrae la mirada hacia arriba; un tono sólido y oscuro de tu paleta en la parte inferior mantiene todo balanceado. Con tu talle corto, una línea vertical continua — un vestido de una sola pieza, o un cinturón fino en un tono de tu paleta — alarga la silueta sin cortarla.",
+    "escotes": "Tu rostro ovalado es versátil: casi cualquier escote te favorece, así que puedes elegir según lo que tu cuerpo necesita. Un escote barco o una manga con volumen en el hombro equilibra visualmente tu cadera — exactamente lo que buscas."
+  },
+
+  "guiaCompras": {
+    "intro": "Construida sobre tu Otoño Oscuro, tu cuerpo de pera, tu talle corto y tu vida real: trabajo remoto, una salida a la oficina, una o dos a la iglesia, una de compras.",
+    "telasIntro": "Tú misma lo dijiste: lino, o un algodón fino y suave. Ese es tu brief de telas — algo que te estilice sin apretar, que se sienta fino sin sacrificar comodidad. Hay más opciones que cumplen esa misma promesa.",
+    "telasSi": [
+      "Lino de peso medio: la textura con carácter que ya pediste, perfecta para tu Otoño Oscuro.",
+      "Algodón fino con caída (popelina suave, algodón mercerizado): fresco, refinado, nunca rígido.",
+      "Crepé y viscosa con movimiento: para las prendas que necesitas que se muevan contigo, no que te aprieten.",
+      "Punto fino con algo de estructura (ponte ligero): para las capas de arriba que quieres que sostengan su forma sin sentirse duras."
+    ],
+    "telasNo": [
+      "Sintéticos ajustados tipo spandex denso: aprietan justo donde no quieres presión.",
+      "Sastrería rígida sin elasticidad: es la estructura extrema que ya sabes que no es para ti.",
+      "Telas muy delgadas o transparentes sin forro: pierden estructura rápido y no se sienten 'finas.'"
+    ],
+    "prendasClave": [
+      "Vestido midi fluido en lino o algodón suave, con manga con algo de volumen: tu prenda perfecta, literalmente descrita por ti misma. Suficientemente cómoda para casa, suficientemente fina para salir con una clienta.",
+      "Falda o pantalón midi/largo en corte recto o palazzo: cubre justo donde tú quieres cubrir, sin apretar la cadera — resuelve directamente el tema de las faldas cortas que evitas.",
+      "Blusa con manga de volumen o escote barco: eleva la parte superior, equilibra tu cadera, y le da a cualquier outfit ese toque 'ingenue' sin esfuerzo.",
+      "Cárdigan o blazer suave con algo de estructura, no rígido: te da la 'sofisticación' que buscas, sin cruzar a la sastrería dura que evitas."
+    ],
+
+    "zapatos": {
+      "diaADia": "Un flat de cuero fino o un kitten heel en un color de tu paleta: la elegancia que ya buscas, con la comodidad que ahora sí puedes tener todos los días — incluso en casa, en vez de la chancla.",
+      "salidasEspeciales": "Tu tacón alto o tu plataforma siguen teniendo su lugar — para la iglesia, para una salida especial. No hay que eliminarlos, solo reservarlos para cuando de verdad los disfrutas."
+    },
+    "bolsos": "Un bolso estructurado de tamaño mediano en un color profundo de tu paleta: suficientemente pulido para una reunión con una clienta, suficientemente versátil para el día a día.",
+    "accesorios": {
+      "intro": "El movimiento es el detalle visual que más te atrae — así que tus accesorios deben moverse contigo: aretes que se mecen, un collar con caída, nunca algo rígido o estático.",
+      "items": [
+        "Aretes colgantes en tonos dorados cálidos o bronce: el metal que mejor conversa con tu Otoño Oscuro.",
+        "Un collar de caída media en un color vivo de tu paleta: la pieza que le da a un outfit simple ese 'contraste alegre' de Carolina Herrera.",
+        "Un cinturón fino en un tono profundo: define tu cintura y alarga tu talle corto en el mismo gesto.",
+        "Un chal o pañuelo de lino o seda en tu paleta: se mueve contigo, y resuelve el 'algo elegante encima' para pasar de casa a la calle sin cambiarte."
+      ]
+    },
+
+    "empiezaAqui": {
+      "intro": "Estás más cerca de lo que crees. Tres movimientos te llevan el resto del camino:",
+      "pasos": [
+        "PRIMERO EL CLÓSET: Saca todo. Separa lo que sí es tu Otoño Oscuro de lo que no. Lo que no pertenezca a tu paleta, aunque te guste, no te está iluminando — considera donarlo o venderlo. Lo que sí pertenece, y además evita lo muy ajustado o muy estructurado, se queda.",
+        "DESPUÉS EL COLOR: Antes de cada compra, revisa tu paleta. Sostén la prenda cerca de tu rostro. No busques que combine exacto — busca que se sienta de la misma familia de profundidad y color que tu paleta.",
+        "COMPRA CON UN VESTIDO EN MENTE: Hazlo tu próxima compra intencional. Un vestido midi fluido en lino o algodón suave, en un color profundo de tu paleta. Es la prenda que tú misma describiste como perfecta, y la que más combinaciones te va a desbloquear."
+      ],
+      "nota": "Tres movimientos. La próxima vez que entres a un lugar sintiéndote radiante, segura y con calidez, vas a saber exactamente cómo llegaste ahí."
+    }
+  },
+
+  "outfits": {
+    "intro": "Tres looks para tu semana real: un día de trabajo remoto donde quieres sentirte coherente sin cambiarte, una salida a la iglesia o social, y una reunión con una futura clienta de tu emprendimiento.",
+    "lista": [
+      {
+        "contexto": "Día en casa — coherente sin esfuerzo",
+        "subtitulo": "cómoda de verdad, pero nunca desalineada",
+        "prendas": "Vestido midi fluido en algodón suave o lino + cárdigan ligero",
+        "colores": "Vestido en un tono profundo de tu paleta (vino, verde bosque) · Cárdigan en chocolate o un neutro cálido",
+        "zapatos": "Flat cómodo o pantufla elegante, en vez de chancla",
+        "detalle": "Aretes pequeños colgantes — el recordatorio, incluso en casa, de que ya estás vestida con intención"
+      },
+      {
+        "contexto": "Iglesia o salida social",
+        "subtitulo": "radiante, femenina, con calidez",
+        "prendas": "Vestido midi con manga de volumen o blusa con escote barco + falda midi",
+        "colores": "Un color vivo de tu paleta arriba (rojo teja, ciruela) · Un tono profundo y sólido abajo (chocolate, azul tinta)",
+        "zapatos": "Kitten heel, o tu tacón alto si la ocasión lo pide",
+        "detalle": "Collar de caída media en un color vivo — tu 'contraste alegre' en acción"
+      },
+      {
+        "contexto": "Reunión con una clienta",
+        "subtitulo": "la asesora en la que te estás convirtiendo",
+        "prendas": "Vestido midi estructurado suave, o blusa + pantalón recto, con cárdigan o blazer suave encima",
+        "colores": "Tonos profundos y sofisticados de tu paleta — vino, verde azulado, chocolate",
+        "zapatos": "Flat de cuero fino o kitten heel",
+        "detalle": "Un cinturón fino que defina tu cintura + un accesorio con movimiento — la credibilidad y la calidez, al mismo tiempo"
+      }
+    ]
+  },
+
+  "imagenYExito": {
+    "intro": "Estás construyendo dos cosas a la vez: la mujer que quieres ser, y el negocio en el que vas a ayudar a otras mujeres a sentirse igual de seguras. Tu imagen ya no es solo personal — es también tu primera carta de presentación profesional. La forma en que te vistes para reunirte con una clienta le dice, antes de que hables, si confiar en tu criterio.",
+    "cita": "'Quisiera reinventarme, descubrir mi estilo y sentirme más segura, para poder ayudar a otras personas a sentir lo mismo.' Esa frase es tu negocio entero, resumido. Y empieza por cómo te vistes tú primero.",
+    "practica": [
+      {
+        "num": "1",
+        "titulo": "La calidez es tu ventaja, no un extra",
+        "texto": "Elegiste 'calidez' como lo que tu imagen siempre debe reflejar. En un mercado de asesoras que se ven perfectas pero distantes, tu calidez es lo que hace que una clienta confíe en ti primero. No la escondas detrás de la sofisticación — déjala ser visible."
+      },
+      {
+        "num": "2",
+        "titulo": "El color vivo cerca del rostro comunica seguridad",
+        "texto": "Para tu Otoño Oscuro, un color profundo y saturado cerca del rostro — no un neutro apagado — es lo que te hace ver segura antes de decir una palabra. Guarda tus tonos más vivos para tus reuniones más importantes."
+      },
+      {
+        "num": "3",
+        "titulo": "La originalidad que buscas ya la tienes — solo falta mostrarla",
+        "texto": "Dijiste que quieres verte única, no encontrar 'lo mismo de siempre.' Un accesorio con movimiento, un color inesperado, un detalle artesanal: eso es todo lo que se necesita para pasar de 'bien vestida' a inconfundible."
+      }
+    ],
+    "formula": "Color vivo cerca del rostro + una línea vertical que alargue tu talle + un detalle con movimiento = la mujer segura, cálida y radiante que ya describiste."
+  },
+
+  "mantra": "No estás buscando quién eres. Ya lo sabes: classic, ingenue, angelic, radiante. Ahora se trata de vestirlo con la misma calidez con la que quieres que te recuerden.",
+  "firma": "Con cariño, Claudia · Poiema Haus"
+}
