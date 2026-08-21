@@ -1,0 +1,193 @@
+{
+  "ui": {
+    "frase_label": "Your Style Concept",
+    "teVeo_label": "I See You",
+    "estiloHoy_label": "Your Style Today",
+    "estiloIdeal_label": "Your Ideal Style",
+    "brecha_label": "Your Next Move",
+    "nombreEstilo_label": "Your Style Has a Name",
+    "segundaOpcion_label": "A Second Direction",
+    "estrategiaColor_label": "Your Color Strategy",
+    "guiaCompras_label": "Your Shopping Guide",
+    "telas_label": "Fabrics",
+    "prendas_label": "Key Pieces",
+    "zapatos_label": "Shoes",
+    "bolsos_label": "Bags",
+    "accesorios_label": "Accessories",
+    "empiezaAqui_label": "Start Here",
+    "outfits_label": "Your Outfits",
+    "imagenYExito_label": "Your Image and Your Success",
+    "mantra_label": "Your Mantra"
+  },
+
+  "frase": "Clean, Classic, Quietly Powerful",
+
+  "teVeo": {
+    "parrafos": [
+      "Salma, you already told us who you are: Breakfast at Tiffany's, old money, refined minimalism, a woman who dresses with intention five days a week in an office. That's not indecision — that's a clarity most women arrive here without. Your challenge was never discovering a style. It's learning to execute the one you already know, dressed for your body, your coloring, your real week.",
+      "This is refinement, not reinvention. You already dress with purpose — minimal, professional, comfortable without ever reading as informal. Your next move is originality: the unexpected detail that turns 'put together' into unmistakable. That's what this guide sharpens."
+    ],
+    "cita": "Precision, not volume. That's the whole philosophy — and it's already yours."
+  },
+
+  "estiloHoyIdeal": {
+    "hoy": {
+      "titulo": "Minimal, Professional — Nearly There",
+      "puntos": [
+        "Comfort, polish, professionalism — in that order. You dress with intention for work. On weekends, you still choose classy. Your lifestyle and your style already align.",
+        "Blazers, knitwear, relaxed oversized pieces — your defaults. Extreme cuts, revealing pieces, heels — none of that interests you. You value line and ease over performance.",
+        "Originality is what you sacrifice most when shopping. Your instinct for refinement is strong. The unexpected layer — the one that makes an outfit memorable — is your next addition. That's what this guide sharpens."
+      ]
+    },
+    "ideal": {
+      "titulo": "Confident, Feminine — With an Edge of Creativity",
+      "puntos": [
+        "You want to walk in feeling confident, moving 'freely and with power.' Not stiff. Not overdone. Commanding, without effort.",
+        "Professionalism, confidence, naturalness — effortless authority, never forced. The woman who doesn't need to try, because she already gets it right.",
+        "Precise silhouettes, refined fabrics, perfectly placed accessories. Black, white, and one bold choice that makes everything else look deliberate.",
+        "Your two goals — a new role, a wider social life — point to the same need: read as credible, poised, memorable, in any room."
+      ]
+    },
+    "brecha": "You're closer than you think. A 4/5 on confidence and alignment means this is a polish, not a rebuild. Your next evolution is originality — the right skirt cut, the satin blouse, the unexpected accessory. That's what this guide sharpens.",
+    "citaAspiracional": "'Clean and classy.' Two words, one philosophy. Nothing wasted. Always elevated. Every style decision you make starts here.",
+
+    "nombreEstilo": "Modern Classic with a Quiet Edge",
+    "descripcionEstilo": "Modern Classic with a Quiet Edge is timeless elegance, built for True Winter coloring — sharp, high-contrast, precise, never cold. Black and white, structured silhouettes that follow the body, one deliberate detail per outfit. This is where your natural intensity and clarity shine.",
+    "referentesDiaADia": [
+      "Search 'old money aesthetic' or 'quiet luxury minimalist' — this is your direction, translated for real workdays.",
+      "Search 'true winter capsule wardrobe' — see your exact coloring in real outfits, not just swatches.",
+      "Search 'modern classic work outfit' — silhouette and fabric ideas for your corporate week.",
+      "Search 'Audrey Hepburn inspired outfit' — your reference, translated into pieces you can actually buy."
+    ],
+    "advertenciaBusqueda": "Avoid 'boho,' 'warm tones capsule,' 'earthy minimalist,' 'soft romantic style' — they fight your True Winter coloring. Skip very oversized or heavily layered looks too. They add volume where you want precision, and overwhelm a shorter torso.",
+
+    "segundaOpcion": {
+      "nombre": "Soft Power Feminine",
+      "intro": "For social outings, when you want more femininity without losing your identity — this direction adds softness and movement to your tailored foundation. Skirts. Satin. Delicate structure.",
+      "caracteristicas": [
+        "Midi and knee-length skirts, structured or slightly fluid — the piece you said you can't find easily, and the fastest way to add femininity",
+        "Satin blouses for work or evening — your own words for the perfect garment, and a fabric that reads as luxury without effort",
+        "Structured feminine silhouettes — A-line, bias-cut, fit-and-flare — never shapeless",
+        "Delicate, deliberate accessories — a pendant, a thin bracelet, pointed-toe flats — softness without clutter"
+      ],
+      "dondeBuscar": [
+        "Search 'soft power office style' or 'feminine minimalist outfit.'",
+        "Search 'satin blouse outfit work' or 'midi skirt office look' — exactly the pieces you're adding next.",
+        "Use this for social outings. Modern Classic with a Quiet Edge stays your Monday-through-Friday mode."
+      ],
+      "diferenciaPractica": "Modern Classic with a Quiet Edge: your daily armor. Soft Power Feminine: your evening expression. Same woman, softer edges."
+    }
+  },
+
+  "estrategiaColor": {
+    "intro": "This is the layer no Pinterest board can give you: how your colorimetry, your body shape, and your face shape work together. Style, you already know. This is the execution.",
+    "paletaBase": "Black, true white, charcoal, and navy — your neutrals. Sharp, clean, cool. Not ivory, not cream: on your True Winter coloring, that warm undertone shows up as muted instead of crisp.",
+    "paletaViva": "Sapphire, emerald, true red, fuchsia — your statement colors. Worn near your face, they activate the natural contrast that makes True Winter coloring so striking.",
+    "paletaHielo": "Icy pink, icy blue, icy yellow — soft, but never warm. Use these in small doses: a blouse, a scarf, one accessory.",
+    "colocacion": "One placement rule matters most for you: your brightest, most saturated color goes near your face — a blouse, a top layer — where it does the most work. Let black, navy, or charcoal carry your lower half, both to ground the outfit and to keep the vertical line that elongates a shorter torso. For your Soft Hourglass shape, keep your waist break dark and defined rather than soft or light — that's what keeps the line crisp on you.",
+    "escotes": "For your softened heart-shaped face — wider through the forehead, narrowing toward the chin — neckline is not a small detail. A V-neck or sweetheart neckline elongates and balances your jawline; it's your most flattering default. A wide boat neck also works well, adding horizontal width at the shoulder to balance a narrower chin. What to avoid: high necklines and turtlenecks — they add width at the top of the face instead of balancing it."
+  },
+
+  "guiaCompras": {
+    "intro": "Built around your True Winter coloring, your Softened Hourglass shape, your shorter torso, and your real week: five office days, one social outing.",
+    "telasIntro": "Your perfect garment: 'satin, but appropriate for work.' That's your fabric brief — luxury and fluidity, with enough structure to read as professional. More fabrics than satin deliver this. Here's where to look.",
+    "telasSi": [
+      "Matte satin and charmeuse: the fabric you described, in a finish built for the office. Matte over high-shine — same luxury, more versatile.",
+      "Silk and silk-like viscose: fluid, lightweight. Drapes over your Softened Hourglass shape without adding bulk.",
+      "Structured jersey and ponte: for blazers and fitted pieces that hold their line through a full workday.",
+      "Tightly woven gabardine and wool crepe: tailored trousers and skirts, precise lines, built for your shape."
+    ],
+    "telasNo": [
+      "Heavy, stiff wovens with no drape: add bulk, box in a shorter torso instead of elongating it.",
+      "Thick, chunky, or heavily textured knits: add bulk in the exact places you're trying to streamline.",
+      "Sheer or flimsy unlined fabrics: lose structure fast, read casual instead of professional."
+    ],
+    "prendasClave": [
+      "Structured midi skirts — A-line, panelled, bias-cut: your next addition, and the fastest way to bring more femininity into your blazers and knitwear. High-waisted, longer hem — this creates vertical length for a shorter torso.",
+      "Fitted blazer with waist definition, in a fabric with drape — not stiff canvas. It should skim your waist, not box you in.",
+      "Satin or silk blouse, matte finish, V-neck or sweetheart neckline: your perfect garment, realized — and your most flattering neckline, in a color from your palette.",
+      "High-waisted, plain-front trousers in a dark solid color: elongate the leg, balance a shorter torso. Tuck a blouse or crop your knitwear, and the vertical line does the rest."
+    ],
+
+    "zapatos": {
+      "diaADia": "Pointed-toe flat or low block heel, in black, true white, or a dark palette color. The point creates length without the height — key with a shorter torso. You avoid heels; pointed flats give you the same long line.",
+      "salidasEspeciales": "A strappy sandal or kitten heel, black or cool metallic, for evenings. A mule in a solid palette color works just as well."
+    },
+    "bolsos": "Structured mini or small tote, black or a dark palette color, for office days — proportioned to your frame, no heavy logos. A small crossbody or clutch in black or cool metallic for evenings. Smaller, structured bags keep your proportions balanced; large totes shorten the torso.",
+    "accesorios": {
+      "intro": "Structure is the visual detail you're drawn to. Your accessories should be precise, not abundant. For a heart-shaped face, earrings do the most work of any accessory.",
+      "items": [
+        "Drop or linear earrings in silver or white gold — draw the eye down from a wider forehead, the most flattering direction for a heart-shaped face. Cool metals match your True Winter coloring.",
+        "A pendant necklace at collarbone length: a vertical line that elongates a shorter torso. Keep it simple.",
+        "One structured bag per outfit, as the focal point — not stacked with extras. One considered piece outperforms three scattered ones.",
+        "A thin belt at the natural waist, black or a dark palette color: marks the waist under blazers or tucked tops, and reads a shorter torso as longer."
+      ]
+    },
+
+    "empiezaAqui": {
+      "intro": "You're already close. Three moves take you the rest of the way:",
+      "pasos": [
+        "CLOSET FIRST: Pull everything out. Separate what you reach for from what sits untouched. Sort by color — set aside anything outside your palette. Keep what you love, sell or donate the rest. Then ask of what remains: does this earn its place? If you're unsure, pair it with something you love and see.",
+        "COLOR NEXT: Check your palette before every shopping trip. Hold a piece near your face, or compare it online to your color family. You're not matching exactly — you're checking if it belongs in the same world. Your True Winter coloring reads through clarity and contrast. On you, muddy, muted, or warm pieces will feel slightly off — not wrong, just not your register.",
+        "SHOP WITH A SKIRT IN MIND: Make it your next purchase. Look for high-waisted midi skirts, A-line or panelled, in black or a dark palette color. Try it with what you already own. One great skirt unlocks more outfits from your existing blazers and knitwear than almost anything else you could buy."
+      ],
+      "nota": "Three moves. Next time you walk into a room moving freely and with power — you'll know exactly how you got there."
+    }
+  },
+
+  "outfits": {
+    "intro": "Three looks for your real week: five office days where you want to feel confident, one social outing where feminine takes the lead.",
+    "lista": [
+      {
+        "contexto": "Office — Monday authority",
+        "subtitulo": "the woman who just walked in, and everyone noticed",
+        "prendas": "High-waisted tailored trousers in black or dark navy + fitted blazer in a soft fabric with waist definition + satin or silk blouse tucked in",
+        "colores": "Black or dark navy trousers · Blazer in a color from your palette · Blouse in true white or a rich dark tone — keep the contrast high",
+        "zapatos": "Pointed-toe flat in black",
+        "detalle": "Drop silver earrings + a pendant necklace — vertical lines elongate, cool metals sharpen the look"
+      },
+      {
+        "contexto": "Office — everyday polished",
+        "subtitulo": "polished without trying, comfortable through every meeting",
+        "prendas": "High-waisted midi skirt in A-line or panelled cut + fitted knitwear or structured top tucked in",
+        "colores": "Skirt in black, deep charcoal, or a rich dark tone from your palette · Top in true white or a contrasting color — always keep the high contrast that flatters your True Winter coloring",
+        "zapatos": "Pointed-toe flat or low block heel in black",
+        "detalle": "A thin black belt at the waist — the line that makes the outfit look intentional"
+      },
+      {
+        "contexto": "Social outing — classy and feminine",
+        "subtitulo": "relaxed, the best version of you",
+        "prendas": "Midi skirt in a fluid fabric (satin, viscose, or bias-cut) + fitted top or blouse with a clean neckline",
+        "colores": "Skirt and top in high-contrast colors from your True Winter palette — black and white, or a rich jewel tone with black",
+        "zapatos": "Strappy sandal or kitten mule in black or cool metallic",
+        "detalle": "Drop earrings in silver — nothing else needed"
+      }
+    ]
+  },
+
+  "imagenYExito": {
+    "intro": "Enclothed cognition: the science of how what you wear changes how you think, move, and how the world responds. It's not theory — it's proven. Your two goals — a new role, a wider social life — both depend on it. The first impression happens before you speak. The woman who walks in moving freely and with power, elegant without needing to try, is the one who gets remembered.",
+    "cita": "'Needs to communicate more confidence.' The clearest brief you could give yourself. Confidence isn't loud. It's a precise line, one purposeful accessory, the ease of someone who knows exactly who she is.",
+    "practica": [
+      {
+        "num": "1",
+        "titulo": "High contrast is your most powerful tool",
+        "texto": "For your True Winter coloring, high contrast — black and white, dark and light — reads as authority immediately. On you, a muted outfit undercuts that authority, even when everything else about it is right. Before you leave: is there contrast between top and bottom, outfit and accessories? If yes, you're already communicating confidence."
+      },
+      {
+        "num": "2",
+        "titulo": "Vertical lines expand your range without adding height",
+        "texto": "With a shorter torso, vertical lines — a pendant, a thin belt, high-waisted trousers with a tucked top, drop earrings — create length and read as taller, more commanding. This isn't about hiding anything. It's about directing the eye."
+      },
+      {
+        "num": "3",
+        "titulo": "Originality is your next evolution — add it intentionally",
+        "texto": "Originality is what you sacrifice most when shopping — so your looks are put-together but sometimes predictable. One unexpected element per outfit — satin instead of cotton, a skirt instead of trousers, a drop earring — is all it takes to go from put-together to memorable. Not more pieces. More considered ones."
+      }
+    ],
+    "formula": "High contrast + one vertical line + one unexpected detail = confident, elegant, unmistakably you."
+  },
+
+  "mantra": "Clean and classy isn't a starting point. It's a standard. You already have it. Now wear it like you know it.",
+  "firma": "With love, Claudia · Poiema Haus"
+}
